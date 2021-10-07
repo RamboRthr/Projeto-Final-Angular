@@ -7,22 +7,22 @@
         <p>Nosso projeto final, adoção de animais</p>
       </div>
     </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3" *ngFor=" let pet of this.petService.list">
-            <img src="../../assets/cachorro.jfif" class="card-img-top" alt="...">
-            <h2> {{pet.name}} </h2>
-            <p>Animal: {{pet.animal}}</p>
-            <p>Raça: {{pet.breed}}</p>
-            <p></p>
-            <p><a class="btn btn-secondary" [routerLink]="['/pet-page/', pet.id]">Saiba mais &raquo;</a></p>
-          </div>
-
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3" *ngFor=" let pet of this.petService.list">
+          <img src="../../assets/cachorro.jfif" class="card-img-top" alt="...">
+          <h2> {{pet.name}} </h2>
+          <p>Animal: {{pet.animal}}</p>
+          <p>Raça: {{pet.breed}}</p>
+          <p></p>
+          <p><a class="btn btn-secondary" [routerLink]="['/pet-page/', pet.id]">Saiba mais &raquo;</a></p>
         </div>
 
-        <hr>
+      </div>
 
-      </div> <!-- /container -->
+      <hr>
+
+    </div> <!-- /container -->
   </main>
 
   <footer class="container">

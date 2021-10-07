@@ -2,51 +2,29 @@
 <div class="jumbotron">
   <section class="container">
     <h1 class="row" style="padding: 30px;">Cadastro do usuário</h1>
-    <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)" >
+    <form class="row g-3" novalidate #form="ngForm" (submit)="onSubmit(form)">
       <div class="mb-3">
         <label>Nome</label>
-        <input
-          name="nome"
-          class="form-control"
-          placeholder="Digite seu nome"
-          [(ngModel)]="this.userService.formData.Name"
-          required
-          [class.invalid]="nome.invalid && nome.touched"
-          minlength="3"
-          maxlength="50"
-          #nome="ngModel"
-        />
+        <input name="nome" class="form-control" placeholder="Digite seu nome"
+          [(ngModel)]="this.userService.formData.Name" required [class.invalid]="nome.invalid && nome.touched"
+          minlength="3" maxlength="50" #nome="ngModel" />
       </div>
 
       <div class="mb-3">
         <label>Sobrenome</label>
-        <input
-          name="sobrenome"
-          class="form-control"
-          placeholder="Digite seu sobrenome"
-          [(ngModel)]="this.userService.formData.Surname"
-          required
-          [class.invalid]="sobrenome.invalid && sobrenome.touched"
-          minlength="3"
-          maxlength="50"
-          #sobrenome="ngModel"
-        />
+        <input name="sobrenome" class="form-control" placeholder="Digite seu sobrenome"
+          [(ngModel)]="this.userService.formData.Surname" required
+          [class.invalid]="sobrenome.invalid && sobrenome.touched" minlength="3" maxlength="50" #sobrenome="ngModel" />
       </div>
-      
+
       <div class="mb-3">
         <label>Telefone</label>
-        <input
-                class="form-control form-control"
-                placeholder="(__) _____-____"
-                name="phone"
-                #phone="ngModel"
-                [(ngModel)]="this.userService.formData.Phone"
-                onkeyup="
+        <input class="form-control form-control" placeholder="(__) _____-____" name="phone" #phone="ngModel"
+          [(ngModel)]="this.userService.formData.Phone" onkeyup="
                             var phone = this.value;
                             if (phone.match(/^[A-Z]|[a-z]$/) !== null){
                                 this.value = '';
-                            }"
-                onkeydown="
+                            }" onkeydown="
                             var phone = this.value;
                             if (window.event.keyCode == 8) { }
                             else if (phone.match(/^[A-Z]|[a-z]$/) !== null){
@@ -60,46 +38,28 @@
                             }
                             else if (phone.match(/^\(\d{2}\) \d{5}$/) !== null) {
                                 this.value = phone + '-';
-                            }"
-                required
-                maxlength="15"
-                minlength="15"
-                [class.invalid]="phone.invalid && phone.touched"
-              />
-              <p *ngIf="phone.invalid && phone.touched" class="invalid">
-                O telefone deve conter no minimo 11 dígitos!
-              </p>
+                            }" required maxlength="15" minlength="15"
+          [class.invalid]="phone.invalid && phone.touched" />
+        <p *ngIf="phone.invalid && phone.touched" class="invalid">
+          O telefone deve conter no minimo 11 dígitos!
+        </p>
       </div>
 
       <div class="mb-3">
         <label>Data de nascimento</label>
-        <input
-          name="diaNascimento"
-          type="date"
-          class="form-control"
-          [(ngModel)]="this.userService.formData.BirthDate"
-          required
-          [class.invalid]="diaNascimento.invalid && diaNascimento.touched"
-          minlength="8"
-          maxlength="10"
-          #diaNascimento="ngModel"
-        />
+        <input name="diaNascimento" type="date" class="form-control" [(ngModel)]="this.userService.formData.BirthDate"
+          required [class.invalid]="diaNascimento.invalid && diaNascimento.touched" minlength="8" maxlength="10"
+          #diaNascimento="ngModel" />
       </div>
-      
+
       <div class="mb-3">
         <label>CPF</label>
-        <input
-                class="form-control form-control"
-                placeholder="___.___.___-__"
-                name="cpf"
-                #cpf="ngModel"
-                [(ngModel)]="this.userService.formData.CPF"
-                onkeyup="
+        <input class="form-control form-control" placeholder="___.___.___-__" name="cpf" #cpf="ngModel"
+          [(ngModel)]="this.userService.formData.CPF" onkeyup="
                             var cpf = this.value;
                             if (cpf.match(/^[A-Z]|[a-z]$/) !== null){
                                 this.value = '';
-                            }"
-                onkeydown="
+                            }" onkeydown="
                             var cpf = this.value;
                             if (window.event.keyCode == 8) { }
                             else if (cpf.match(/^\d{3}$/) !== null){
@@ -110,12 +70,7 @@
                             }
                             else if (cpf.match(/^\d{3}\.\d{3}\.\d{3}$/) !== null) {
                                 this.value = cpf + '-';
-                            }"
-                required
-                minlength="14"
-                maxlength="14"
-                [class.invalid]="cpf.invalid && cpf.touched"
-              />
+                            }" required minlength="14" maxlength="14" [class.invalid]="cpf.invalid && cpf.touched" />
         <p *ngIf="cpf.invalid && cpf.touched" class="invalid">
           O CPF deve conter no minimo 11 dígitos
         </p>
@@ -123,18 +78,9 @@
 
       <div class="mb-3">
         <label>Email</label>
-        <input
-          name="email"
-          type="email"
-          class="form-control"
-          [(ngModel)]="this.userService.formData.Email"
-          required
-          [class.invalid]="email.invalid && email.touched"
-          minlength="2"
-          maxlength="60"
-          pattern="[^ @]*@[^ @]*"
-          #email="ngModel"
-        />
+        <input name="email" type="email" class="form-control" [(ngModel)]="this.userService.formData.Email" required
+          [class.invalid]="email.invalid && email.touched" minlength="2" maxlength="60" pattern="[^ @]*@[^ @]*"
+          #email="ngModel" />
         <p *ngIf="email.invalid && email.touched" class="invalid">
           Email invalido
         </p>
@@ -142,40 +88,19 @@
 
       <div class="mb-3">
         <label>Crie uma senha</label>
-        <input
-          name="password1"
-          type="password"
-          class="form-control"
-          [(ngModel)] = "this.password1"
-          required
-          minlength="6"
-          maxlength="60"         
-        />
+        <input name="password1" type="password" class="form-control" [(ngModel)]="this.password1" required minlength="6"
+          maxlength="60" />
         <label>Corfirme sua senha</label>
-        <input
-          name="password2"
-          type="password"
-          class="form-control"
-          required
-          *ngIf="password1"
-          [(ngModel)]="this.userService.formData.Password"
-          [class.invalid]="password2.invalid && password2.touched "
-          minlength="6"
-          maxlength="60"
-          #password2="ngModel"
-        />
+        <input name="password2" type="password" class="form-control" required *ngIf="password1"
+          [(ngModel)]="this.userService.formData.Password" [class.invalid]="password2.invalid && password2.touched "
+          minlength="6" maxlength="60" #password2="ngModel" />
       </div>
       <div class="mb-3">
-        <label >Bairro</label>
+        <label>Bairro</label>
         <br>
-        <select
-          class="form-select"
-          aria-label="Default select example"
-          name="bairro"
-          [(ngModel)]="this.userService.formData.District"
-          #bairro="ngModel"
-          style="width: 50%; height: 50%; margin-left: 10px;"
-        >
+        <select class="form-select" aria-label="Default select example" name="bairro"
+          [(ngModel)]="this.userService.formData.District" #bairro="ngModel"
+          style="width: 50%; height: 50%; margin-left: 10px;">
           <option selected>Selecione</option>
           <option value="1">Água Verde</option>
           <option value="2">Badenfurt</option>
@@ -217,65 +142,37 @@
 
         </select>
       </div>
-      
+
 
       <div class="mb-3">
         <label>Rua</label>
-        <input
-          name="rua"
-          type="email"
-          class="form-control"
-          placeholder="Ex: Rua Bahia"
-          [(ngModel)]="this.userService.formData.Street"
-          required
-          [class.invalid]="rua.invalid && rua.touched"
-          minlength="2"
-          maxlength="60"
-          #rua="ngModel"
-        />
+        <input name="rua" type="email" class="form-control" placeholder="Ex: Rua Bahia"
+          [(ngModel)]="this.userService.formData.Street" required [class.invalid]="rua.invalid && rua.touched"
+          minlength="2" maxlength="60" #rua="ngModel" />
       </div>
-      
+
       <div class="col-md-2">
         <label>Número</label>
-        <input
-          name="numeroCasa"
-          class="form-control"
-          placeholder="Ex: 000"
-          [(ngModel)]="this.userService.formData.House_number"
-          required
-          [class.invalid]="numeroCasa.invalid && numeroCasa.touched"
-          minlength="1"
-          maxlength="4"
-          #numeroCasa="ngModel"
-          style="width: 100px;"
-        />
+        <input name="numeroCasa" class="form-control" placeholder="Ex: 000"
+          [(ngModel)]="this.userService.formData.House_number" required
+          [class.invalid]="numeroCasa.invalid && numeroCasa.touched" minlength="1" maxlength="4" #numeroCasa="ngModel"
+          style="width: 100px;" />
       </div>
-      
+
       <div>
         <label>CEP</label>
-        
-        <input
-        class="form-control"
-                placeholder="_____-___"
-                name="cep"
-                #cep="ngModel"
-                [(ngModel)]="this.userService.formData.CEP"
-                onkeyup="
+
+        <input class="form-control" placeholder="_____-___" name="cep" #cep="ngModel"
+          [(ngModel)]="this.userService.formData.CEP" onkeyup="
                             var cep = this.value;
                             if (cep.match(/^[A-Z]|[a-z]$/) !== null){
                                 this.value = '';
-                            }"
-                onkeydown="
+                            }" onkeydown="
                             var cep = this.value;
                             if (window.event.keyCode == 8) { }
                             else if (cep.match(/^\d{5}$/) !== null){
                                 this.value = cep + '-';
-                            }"
-                required
-                minlength="9"
-                maxlength="9"
-                [class.invalid]="cep.invalid && cep.touched"
-              />
+                            }" required minlength="9" maxlength="9" [class.invalid]="cep.invalid && cep.touched" />
         <p *ngIf="cep.invalid && cep.touched" class="invalid">
           O Cep invalido
         </p>

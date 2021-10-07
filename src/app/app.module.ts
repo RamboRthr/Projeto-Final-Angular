@@ -39,7 +39,7 @@ import { ReportPageComponent } from './report-page/report-page.component';
     PetPageComponent,
     AdoptPageComponent,
     ReportPageComponent,
-    
+
   ],
   imports: [
     BrowserModule,

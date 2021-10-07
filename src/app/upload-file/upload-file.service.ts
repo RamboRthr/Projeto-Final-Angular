@@ -9,7 +9,7 @@ export class UploadFileService {
 
   constructor(private http: HttpClient) { }
 
-  upload(files: Set<File>, url: string){
+  upload(files: Set<File>, url: string) {
 
     const formData = new FormData();
 

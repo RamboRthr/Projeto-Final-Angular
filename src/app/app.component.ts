@@ -16,9 +16,9 @@ export class AppComponent {
 
   loggedUsers: User[] = [];
 
-  constructor(private userServise: UserService, private petServise: PetService) {}
-  
-  ngOnInit(): void{
+  constructor(private userServise: UserService, private petServise: PetService) { }
+
+  ngOnInit(): void {
     this.userServise.getAllUsers
   }
 }

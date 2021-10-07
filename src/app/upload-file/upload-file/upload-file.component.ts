@@ -13,7 +13,7 @@ export class UploadFileComponent implements OnInit {
   files: Set<File> = new Set;
   progress = 0;
 
-  constructor(private service: UploadFileService){}
+  constructor(private service: UploadFileService) { }
   ngOnInit() { }
 
   onChange(event: any) {
@@ -37,16 +37,16 @@ export class UploadFileComponent implements OnInit {
     if (this.files && this.files.size > 0) {
       this.service.upload(this.files, 'http://localhost:8000/upload')
         .subscribe(response => console.log('Upload Concluído'));
-        // .subscribe((event: HttpEvent<Object>) => {
-        //   // console.log(event);
-        //   if (event.type === HttpEventType.Response) {
-        //     console.log('Upload Concluído');
-        //   } else if (event.type === HttpEventType.UploadProgress) {
-        //     const percentDone = Math.round((event.loaded * 100) / event.total);
-        //     // console.log('Progresso', percentDone);
-        //     this.progress = percentDone;
-        //   }
-        // } );
+      // .subscribe((event: HttpEvent<Object>) => {
+      //   // console.log(event);
+      //   if (event.type === HttpEventType.Response) {
+      //     console.log('Upload Concluído');
+      //   } else if (event.type === HttpEventType.UploadProgress) {
+      //     const percentDone = Math.round((event.loaded * 100) / event.total);
+      //     // console.log('Progresso', percentDone);
+      //     this.progress = percentDone;
+      //   }
+      // } );
     }
   }
 }

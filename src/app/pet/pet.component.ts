@@ -50,6 +50,6 @@ export class PetComponent implements OnInit {
       });
   }*/
 
-  
+
 }
 
