@@ -177,9 +177,44 @@
           style="width: 50%; height: 50%; margin-left: 10px;"
         >
           <option selected>Selecione</option>
-          <option value="1">Centro</option>
-          <option value="2">Velha</option>
-          <option value="3">Vila Nova</option>
+          <option value="1">Água Verde</option>
+          <option value="2">Badenfurt</option>
+          <option value="3">Bela Vista</option>
+          <option value="4">Boa Vista</option>
+          <option value="5">Bom Retiro</option>
+          <option value="6">Centro</option>
+          <option value="7">Do Salto</option>
+          <option value="8">Escola Agrícola</option>
+          <option value="9">Fidélis</option>
+          <option value="10">Fortaleza</option>
+          <option value="11">Fortaleza Alta</option>
+          <option value="12">Garcia</option>
+          <option value="13">Glória</option>
+          <option value="14">Itoupava Central</option>
+          <option value="15">Itoupava Norte</option>
+          <option value="16">Itoupava Seca</option>
+          <option value="17">Itoupavazinha</option>
+          <option value="18">Jardim Blumenau</option>
+          <option value="19">Nova Esperança</option>
+          <option value="20">Passo Manso</option>
+          <option value="21">Ponta Aguda</option>
+          <option value="22">Progresso</option>
+          <option value="23">Ribeirão Fresco</option>
+          <option value="24">Salto</option>
+          <option value="25">Salto do Norte</option>
+          <option value="26">Salto Weissbach</option>
+          <option value="27">Testo Salto</option>
+          <option value="28">Tribess</option>
+          <option value="29">Valparaíso</option>
+          <option value="30">Velha</option>
+          <option value="31">Velha Central</option>
+          <option value="32">Velha Grande</option>
+          <option value="33">Victor Konder</option>
+          <option value="34">Vila Formosa</option>
+          <option value="35">Vila Itoupava</option>
+          <option value="36">Vila Nova</option>
+          <option value="37">Vorstadt</option>
+
         </select>
       </div>
       
@@ -190,7 +225,7 @@
           name="rua"
           type="email"
           class="form-control"
-          placeholder="Ex: Rua general osorio"
+          placeholder="Ex: Rua Bahia"
           [(ngModel)]="this.userService.formData.Street"
           required
           [class.invalid]="rua.invalid && rua.touched"
@@ -205,7 +240,7 @@
         <input
           name="numeroCasa"
           class="form-control"
-          placeholder="Ex: 365"
+          placeholder="Ex: 000"
           [(ngModel)]="this.userService.formData.House_number"
           required
           [class.invalid]="numeroCasa.invalid && numeroCasa.touched"
