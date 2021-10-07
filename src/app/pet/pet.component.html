@@ -26,12 +26,8 @@
       <div class="col-md-6" style="padding-top: 10px;">
 
         <label>Idade (anos / meses)</label>
-        <input name="anos" class="form-control" type="number" [(ngModel)]="this.petService.formData.age_years" required
-          [class.invalid]="anos.invalid && anos.touched" minlength="1" maxlength="2" #anos="ngModel"
-          style="width: 50%;">
-        <input name="meses" class="form-control" type="number" [(ngModel)]="this.petService.formData.age_months"
-          required [class.invalid]="meses.invalid && meses.touched" minlength="1" maxlength="2" #meses="ngModel"
-          style="width: 50%;">
+        <input name="anos" class="form-control" type="text" [(ngModel)]="this.petService.formData.age" required
+          [class.invalid]="anos.invalid && anos.touched" minlength="1" maxlength="20" #anos="ngModel">
       </div>
       <div class="col-6">
         <label>Porte</label>

@@ -7,8 +7,7 @@ export class Pet {
     name: string = ""; // nome do pet
     animal: string = ""; // tipo do animal
     breed: string = ""; // raça do animal
-    age_years: number = 0; // idade
-    age_months: number = 0;
+    age: string = ""; // idade
     size: string = ""; // porte, pequeno meido grande
     adopted: boolean = false;
     current_owner_id: number = 0;
