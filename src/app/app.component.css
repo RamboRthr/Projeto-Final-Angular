@@ -1,4 +1,38 @@
-.navbar{
-    background: #a17e5f;
-
+body{
+    width: 10%;
+    height: 10%;
+}
+main{
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+}
+.menu-1 a{
+    float: left;
+    color: rgb(255, 255, 255);
+}
+.menu-1 a:hover{
+    color: lightskyblue;
+    border-bottom: 2px solid lightskyblue;
+}
+.menu-1{
+    float: left;
+    padding: 16px;
+    width: 60%;
+}
+.menu-2 ul li{
+    display: inline-block;
+    list-style: none;
+}
+.menu-2 ul li a{
+    color: rgb(255, 255, 255);
+}
+.menu-2 ul li a:hover{
+    color:lightskyblue;
+    border-bottom: 1px solid lightskyblue;
+}
+.menu-2{
+    width: 40%;
+    float: left;
+    padding: 16px;
 }

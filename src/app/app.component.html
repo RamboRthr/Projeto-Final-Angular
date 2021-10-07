@@ -1,40 +1,51 @@
 <router-outlet></router-outlet>
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">GetPet</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
+<body>
 
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 
-      <li class="nav-item navbar-right">
-        <a class="nav-link" routerLink="/pet-sign-up">Cadastrar pet</a>
-      </li>
-    </ul>
-  </div>
+    <main>
 
-  <ul class="navbar-nav mr-auto navbar-right">
-    <li class="nav-item navbar-right">
-      <a class="nav-link" routerLink="/user-login">Entrar</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" routerLink="/user-sign-up">Cadastre-se</a>
-    </li>
-    <div class="btn-group" dropdown style="margin-right: 10px;">
-      <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-        aria-controls="dropdown-animated">
-        Meu perfil <span class="caret"></span>
-      </button>
-      <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">
-        <li role="menuitem"><a class="dropdown-item" href="#">Meus pets</a></li>
-        <li role="menuitem"><a class="dropdown-item" href="#">Sair</a>
-      </ul>
-    </div>
-  </ul>
-</nav>
+      <div class="menu-1">
+        <a class="navbar-brand" href="#">GetPet</a>
+        <ul class="navbar-nav mr-auto">
+
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item navbar-right">
+            <a class="nav-link" routerLink="/pet-sign-up">Cadastrar pet</a>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="menu-2">
+        <ul class="cadastro">
+          <li class="nav-item navbar-right">
+            <a class="nav-link" color="#000099" routerLink="/user-login">Entrar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/user-sign-up">Cadastre-se</a>
+          </li>
+
+          <div class="btn-group" dropdown style="margin-right: 10px;">
+            <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+              aria-controls="dropdown-animated">
+              Meu perfil <span class="caret"></span>
+            </button>
+            <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu"
+              aria-labelledby="button-animated">
+              <li role="menuitem"><a class="dropdown-item" href="#">Meus pets</a></li>
+              <li role="menuitem"><a class="dropdown-item" href="#">Sair</a>
+            </ul>
+          </div>
+        </ul>
+      </div>
+
+    </main>
+
+  </nav>
+
+</body>
