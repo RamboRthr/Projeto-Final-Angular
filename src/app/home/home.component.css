@@ -1,15 +1,16 @@
 body {
     padding-top: 3.5rem;
-    background-image: url(../../assets/cards-background-2.jpeg);
-    background-repeat: no-repeat;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    padding: 0;
+    background: url(../../assets/cards-background-2.jpeg) no-repeat bottom center scroll;
+    background-position: 30% 45%;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
     background-size: cover;
-    width: 100%;
-    height: 100%; 
-}
-.header{
-    width: 100%;
-    height: 60px;
-    background: #a17e5f;
+    -o-background-size: cover;
 }
 .man{
     width: 980px;
@@ -21,12 +22,8 @@ body {
     margin-left: 20%;
     background-position: center;
 }
-.display-3{
-    width: 980px;
-    margin: 0 auto;
-    position: relative;
-}
 .col-md-3{
+  
     margin-bottom: 5%;
     margin-right: 5%;
     padding: 20px;
@@ -34,9 +31,9 @@ body {
     border-radius: 5%;
 }
 .jumbotron{
-    background-image: url(../../assets/home-background.jpeg) ;
-    width: 100%;
+    background-color: #fec89a;
+    background-image: url(../../assets/lado-esquerdo-pet.png),url(../../assets/lado-direito-pet.png) ;
+    width: 100%,;
     background-repeat: no-repeat;
-    background-position: center;
-    background-color: orange;
+    background-position: left, right;
 }
