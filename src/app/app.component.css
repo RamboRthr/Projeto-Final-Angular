@@ -47,3 +47,8 @@ footer{
     text-align: center;
     line-height: 100px;
 }
+
+footer{
+    position:relative;
+    width: 1000%;
+}
