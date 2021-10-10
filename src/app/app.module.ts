@@ -41,8 +41,7 @@ import { PetconfirmComponent } from './petconfirm/petconfirm.component';
     PetPageComponent,
     AdoptPageComponent,
     ReportPageComponent,
-    PetconfirmComponent,
-    
+    PetconfirmComponent
   ],
   imports: [
     BrowserModule,

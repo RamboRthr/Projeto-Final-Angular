@@ -48,5 +48,4 @@ export class PetComponent implements OnInit {
     this.fileToUpload = files.item(0);
   }
 
-  
 }

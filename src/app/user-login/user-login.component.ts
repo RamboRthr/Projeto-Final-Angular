@@ -22,7 +22,7 @@ export class UserLoginComponent implements OnInit {
   }
 
   verifyLogin(): void {
-  
+
     let user_list: User[] = this.userService.list;
     for (let index = 0; index < user_list.length; index++) {
 
@@ -31,11 +31,11 @@ export class UserLoginComponent implements OnInit {
         this.userService.loggedUsers.push(user_list[index])
         this.routerService.navigateByUrl("/")
       }
-      
-      
+
+
     }
-    
-    
+
+
   }
 
 

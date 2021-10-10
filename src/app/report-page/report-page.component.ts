@@ -18,5 +18,4 @@ export class ReportPageComponent implements OnInit {
 
   openModel(template: TemplateRef<any>){
     this.modalRef = this.modalService.show(template);
-  }
 }

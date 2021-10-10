@@ -15,7 +15,7 @@ export class PetPageComponent implements OnInit {
   pet: Pet = new Pet;
   user: User = new User;
 
-  constructor(public petService: PetService, public userService: UserService, private actRoute: ActivatedRoute) { 
+  constructor(public petService: PetService, public userService: UserService, private actRoute: ActivatedRoute) {
     this.pet.id = this.actRoute.snapshot.params.id;
   }
 

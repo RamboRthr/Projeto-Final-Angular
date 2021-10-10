@@ -26,22 +26,22 @@ export class UserComponent implements OnInit {
       this.modalRef = this.modalService.show(template);
   }
 
-  update(){
+  update() {
     this.userService.updateUser(this.userService.formData);
   }
 
-  getUser(){
+  getUser() {
     this.userService.getUser(this.userService.formData.Id);
   }
 
-  postUser(){
+  postUser() {
     this.userService.postUser();
   }
-  verifyPassword(pwd1: string, pwd2: string): boolean{
-    if(pwd1 == pwd2){
+  verifyPassword(pwd1: string, pwd2: string): boolean {
+    if (pwd1 == pwd2) {
       return true;
     }
-    else{
+    else {
       return false;
     }
   }
