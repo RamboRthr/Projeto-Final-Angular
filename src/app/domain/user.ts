@@ -1,7 +1,6 @@
 import { Pet } from "./pet";
 
 export class User {
-    Id: number = 0;
     CPF : string  = '';
     Name : string = '';
     Surname: string = '';
@@ -9,12 +8,8 @@ export class User {
     Phone: string = '';
     District: string = "" 
     Street: string = "";
-    House_number: string = '';
+    HouseNumber: string = '';
     CEP: string = '';  
     BirthDate: Date = new Date();
     Password: string = '';
-    Adopted: boolean = false;
-    Donated: boolean = false;
-    pets: Pet[] = [];
-    logged: boolean = false;
 }

@@ -27,7 +27,6 @@ export class UserLoginComponent implements OnInit {
     for (let index = 0; index < user_list.length; index++) {
 
       if (user_list[index].Email == this.form_email && user_list[index].Password == this.form_password) {
-        user_list[index].logged = true;
         this.userService.loggedUsers.push(user_list[index])
         this.routerService.navigateByUrl("/")
       }

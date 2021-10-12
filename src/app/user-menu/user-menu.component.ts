@@ -15,12 +15,12 @@ export class UserMenuComponent implements OnInit {
   }
 
   onSubmit(form: any) {
-    this.update();
+    // this.update();
   }
   //PRECISA PEGAR O OBJETO DO USUARIO LOGADO
-  update() {
-    this.userService.updateUser(this.userService.formData);
-  }
+  // update() {
+    // this.userService.updateUser(this.userService.formData);
+  // }
 
   postUser() {
     this.userService.postUser();

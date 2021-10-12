@@ -31,7 +31,7 @@ export class PetComponent implements OnInit {
     
   }
   onSubmit(form: any, template: TemplateRef<any>) {
-    this.petService.formData.current_owner_id = this.userService.logged.Id;
+    // this.petService.formData.current_owner_id = this.userService.logged.Id;
     this.postPet();
     // this.uploadFileToActivity();
     this.modalRef = this.modalService.show(template);

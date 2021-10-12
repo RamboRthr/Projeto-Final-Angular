@@ -32,14 +32,27 @@ export class UserService {
     this.logged.District = "Progresso"
     this.logged.Street = "Rua da Banana"
     this.logged.Email = "cleitin@hotmail.com"
-    this.logged.House_number = "7"
+    this.logged.HouseNumber = "7"
     this.logged.Surname = "Da Massa"
     this.logged.Phone = "9999-9999"
     this.logged.CEP = "99.999-999"
     this.logged.Password = "senhadaoradocleitin"
-    this.logged.pets = [];
-    this.logged.Id = 1
   }
+
+  // public teste: User = {
+  //   Name: "Cleitin",
+  //   CPF: "12345678910",
+  //   District : "Progresso",
+  //   Street : "Rua da Banana",
+  //   Email : "cleitin@hotmail.com",
+  //   HouseNumber : "7",
+  //   Surname : "Da Massa",
+  //   Phone : "9999-9999",
+  //   CEP : "99.999-999",
+  //   Password : "senhadaoradocleitin",
+  //   BirthDate: new Date()
+  // };
+
 
   getUser(id: number)
   {
@@ -56,17 +69,17 @@ export class UserService {
     });
   }
 
-  updateUser(user:User){
-    return this.httpClient.put<User>(this.BASE_URL+ `/${user.Id}`, user).subscribe( () => {
-      this.getAllUsers();
-    }); 
-  }
+  // updateUser(user:User){
+  //   return this.httpClient.put<User>(this.BASE_URL+ `/${user.Id}`, user).subscribe( () => {
+  //     this.getAllUsers();
+  //   }); 
+  // }
 
-  deleteUser(user: User){
-    return this.httpClient.delete<User>(this.BASE_URL+ `/${user.Id}`).subscribe( () => {
-      this.getAllUsers();
-    })
-  }
+  // deleteUser(user: User){
+  //   // return this.httpClient.delete<User>(this.BASE_URL+ `/${user.Id}`).subscribe( () => {
+  //     // this.getAllUsers();
+  //   })
+  // }
 }
 
 

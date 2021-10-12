@@ -26,12 +26,12 @@ export class UserComponent implements OnInit {
       this.modalRef = this.modalService.show(template);
   }
 
-  update(){
-    this.userService.updateUser(this.userService.formData);
-  }
+  // update(){
+  //   this.userService.updateUser(this.userService.formData);
+  // }
 
   getUser(){
-    this.userService.getUser(this.userService.formData.Id);
+    // this.userService.getUser(this.userService.formData.Id);
   }
 
   postUser(){
