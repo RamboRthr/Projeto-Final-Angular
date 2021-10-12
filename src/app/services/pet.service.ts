@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PetService {
 
-  BASE_URL = "https://localhost:44356/api/Pets"
+  BASE_URL = "https://localhost:5001/pet"
   constructor (private httpClient: HttpClient) { }
 
   public list: Pet[] =  [];

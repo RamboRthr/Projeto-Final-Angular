@@ -8,7 +8,7 @@ import { Photo } from '../domain/photo';
 export class PhotoUploadService {
 
 	// API url
-	baseApiUrl = "https://localhost:44356/api/Photos"
+	baseApiUrl = "https://localhost:5001/photo"
 
 	constructor(private http: HttpClient) { }
 

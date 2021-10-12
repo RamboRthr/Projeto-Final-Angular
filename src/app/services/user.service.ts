@@ -8,7 +8,7 @@ import { User } from '../domain/user';
 })
 export class UserService {
 
-  BASE_URL = "https://localhost:44356/api/Users"
+  BASE_URL = "https://localhost:5001/user"
   constructor( private httpClient: HttpClient) { }
 
   public list: User[] = [];
