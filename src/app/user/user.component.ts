@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
   password1: string = "";
   
   onSubmit(form : any, template: TemplateRef<any>){
-    if(this.verifyPassword(this.password1, this.userService.formData.Password) == true)
+    // if(this.verifyPassword(this.password1, this.userService.formData.Password) == true)
       this.postUser(); 
       this.modalRef = this.modalService.show(template);
   }
