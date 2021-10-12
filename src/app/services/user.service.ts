@@ -43,14 +43,15 @@ export class UserService {
 
   getUser(id: number)
   {
-    return this.httpClient.get<User>(this.BASE_URL+ `/${id}`).subscribe((data) =>
+    return this.httpClient.get<User>(this.BASE_URL+ `/get-user-by-id${id}`).subscribe((data) =>
     {
       this.formData = data;
     })
   }
 
   postUser(){
-    return this.httpClient.post(this.BASE_URL, this.formData).subscribe( () => {
+    return this.httpClient.post(this.BASE_URL + `/create-user`, this.formData).subscribe( () => {
+      console.log("passei aqui")
       this.getAllUsers();
     });
   }
