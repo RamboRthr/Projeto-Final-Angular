@@ -15,7 +15,7 @@ export class PetService {
   public isNew : boolean = false;
 
   getAllPets(){
-    this.httpClient.get<any>(this.BASE_URL ).subscribe((data) =>{
+    this.httpClient.get<any>(this.BASE_URL + `/get-all-pets`).subscribe((data) =>{
       console.log(data);
       this.list = data.$values as Pet[];
     });
@@ -23,26 +23,26 @@ export class PetService {
 
   getPet(id: number)
   {
-    return this.httpClient.get<Pet>(this.BASE_URL+ `/${id}`).subscribe((data) =>
+    return this.httpClient.get<Pet>(this.BASE_URL+ `/get-pet-by-id${id}`).subscribe((data) =>
     {
       this.formData = data;
     })
   }
 
   postPet(){
-    return this.httpClient.post(this.BASE_URL, this.formData).subscribe( () => {
+    return this.httpClient.post(this.BASE_URL + `/create-pet`, this.formData).subscribe( () => {
       this.getAllPets();
     });
   }
 
   updatePet(pet: Pet){
-    return this.httpClient.put<Pet>(this.BASE_URL+ `/${pet.id}`, pet).subscribe( () => {
+    return this.httpClient.put<Pet>(this.BASE_URL+ `/update-pet${pet.id}`, pet).subscribe( () => {
       this.getAllPets();
     }); 
   }
 
   deletePet(pet:Pet){
-    return this.httpClient.delete<Pet>(this.BASE_URL+ `/${pet.id}`).subscribe( () => {
+    return this.httpClient.delete<Pet>(this.BASE_URL+ `/delete-pet-by-id${pet.id}`).subscribe( () => {
       this.getAllPets();
     })
   }
