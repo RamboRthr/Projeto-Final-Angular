@@ -1,9 +1,36 @@
+body{
+    background-image: url(../../assets/card.png);
+    background-size: cover;
+    height: 100%;
+    background-repeat: no-repeat;
+}
+
 .container{
     width: 600px;
     margin-left: 25%;
     margin-right: 25%;
-    
+    margin-top: 3%;
+    border-style: groove;
+    border-radius: 5%;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px; 
+    background-image: url(../../assets/CardsPetRegistrationBackgroundPhotoo.png);
+    background-size: cover;
+    height: 100%;
+    color: black; 
 }
+
+section h1 {
+    font-size: 60px;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.mb-3{
+    padding: 1%;
+}
+
 #bairro{
     margin-top: 10px;
 }
