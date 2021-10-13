@@ -86,37 +86,37 @@
       </div>
       
       <div class="mb-3">
-        <label>CPF</label>
+        <label>Cpf</label>
         <input
                 class="form-control form-control"
                 placeholder="___.___.___-__"
-                name="cpf"
-                #cpf="ngModel"
-                [(ngModel)]="this.userService.formData.CPF"
+                name="Cpf"
+                #Cpf="ngModel"
+                [(ngModel)]="this.userService.formData.Cpf"
                 onkeyup="
-                            var cpf = this.value;
-                            if (cpf.match(/^[A-Z]|[a-z]$/) !== null){
+                            var Cpf = this.value;
+                            if (Cpf.match(/^[A-Z]|[a-z]$/) !== null){
                                 this.value = '';
                             }"
                 onkeydown="
-                            var cpf = this.value;
+                            var Cpf = this.value;
                             if (window.event.keyCode == 8) { }
-                            else if (cpf.match(/^\d{3}$/) !== null){
-                                this.value = cpf + '.';
+                            else if (Cpf.match(/^\d{3}$/) !== null){
+                                this.value = Cpf + '.';
                             }
-                            else if (cpf.match(/^\d{3}\.\d{3}$/) !== null){
-                                this.value = cpf + '.';
+                            else if (Cpf.match(/^\d{3}\.\d{3}$/) !== null){
+                                this.value = Cpf + '.';
                             }
-                            else if (cpf.match(/^\d{3}\.\d{3}\.\d{3}$/) !== null) {
-                                this.value = cpf + '-';
+                            else if (Cpf.match(/^\d{3}\.\d{3}\.\d{3}$/) !== null) {
+                                this.value = Cpf + '-';
                             }"
                 required
                 minlength="14"
                 maxlength="14"
-                [class.invalid]="cpf.invalid && cpf.touched"
+                [class.invalid]="Cpf.invalid && Cpf.touched"
               />
-        <p *ngIf="cpf.invalid && cpf.touched" class="invalid">
-          O CPF deve conter no minimo 11 dígitos
+        <p *ngIf="Cpf.invalid && Cpf.touched" class="invalid">
+          O Cpf deve conter no minimo 11 dígitos
         </p>
       </div>
 
@@ -249,31 +249,31 @@
       </div>
       
       <div>
-        <label>CEP</label>
+        <label>Cep</label>
         
         <input
         class="form-control"
                 placeholder="_____-___"
-                name="cep"
-                #cep="ngModel"
-                [(ngModel)]="this.userService.formData.CEP"
+                name="Cep"
+                #Cep="ngModel"
+                [(ngModel)]="this.userService.formData.Cep"
                 onkeyup="
-                            var cep = this.value;
-                            if (cep.match(/^[A-Z]|[a-z]$/) !== null){
+                            var Cep = this.value;
+                            if (Cep.match(/^[A-Z]|[a-z]$/) !== null){
                                 this.value = '';
                             }"
                 onkeydown="
-                            var cep = this.value;
+                            var Cep = this.value;
                             if (window.event.keyCode == 8) { }
-                            else if (cep.match(/^\d{5}$/) !== null){
-                                this.value = cep + '-';
+                            else if (Cep.match(/^\d{5}$/) !== null){
+                                this.value = Cep + '-';
                             }"
                 required
                 minlength="9"
                 maxlength="9"
-                [class.invalid]="cep.invalid && cep.touched"
+                [class.invalid]="Cep.invalid && Cep.touched"
               />
-        <p *ngIf="cep.invalid && cep.touched" class="invalid">
+        <p *ngIf="Cep.invalid && Cep.touched" class="invalid">
           O Cep invalido
         </p>
       </div>

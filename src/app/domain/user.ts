@@ -2,15 +2,15 @@ import { Pet } from "./pet";
 
 export class User {
     Id: number = 0;
-    CPF : string  = '';
     Name : string = '';
     Surname: string = '';
+    Cpf : string  = '';
     Email : string= '';
     Phone: string = '';
-    District: string = "" 
     Street: string = "";
     HouseNumber: string = '';
-    CEP: string = '';  
-    BirthDate: Date = new Date();
+    District: string = "" 
+    Cep: string = '';  
+    BirthDate: string = '';
     Password: string = '';
 }

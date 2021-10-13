@@ -52,12 +52,12 @@
     </div>
     
     <div class="mb-3">
-      <label>CPF</label>
+      <label>Cpf</label>
       <input
-        name="cpf"
+        name="Cpf"
         class="form-control"
-        [(ngModel)]="this.userService.logged.CPF"
-        #cpf="ngModel"
+        [(ngModel)]="this.userService.logged.Cpf"
+        #Cpf="ngModel"
         disabled
       />
     </div>
@@ -176,18 +176,18 @@
     </div>
     
     <div class="mb-3">
-      <label>CEP</label>
+      <label>Cep</label>
       <input
-        name="cep"
-        type="cep"
+        name="Cep"
+        type="Cep"
         class="form-control"
         placeholder="Ex.:00000-000"
-        [(ngModel)]="this.userService.logged.CEP"
+        [(ngModel)]="this.userService.logged.Cep"
         required
-        [class.invalid]="cep.invalid && cep.touched"
+        [class.invalid]="Cep.invalid && Cep.touched"
         minlength="8"
         maxlength="8"
-        #cep="ngModel"
+        #Cep="ngModel"
       />
     </div>
 
