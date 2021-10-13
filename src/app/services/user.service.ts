@@ -8,7 +8,7 @@ import { User } from '../domain/user';
 })
 export class UserService {
 
-  BASE_URL = "https://localhost:44356/api/Users"
+  BASE_URL = "https://localhost:5001/user"
   constructor( private httpClient: HttpClient) { }
 
   public list: User[] = [];
@@ -34,7 +34,7 @@ export class UserService {
   }
 
   postUser(){
-    return this.httpClient.post(this.BASE_URL, this.formData).subscribe( () => {
+    return this.httpClient.post(this.BASE_URL+`/create-user`, this.formData).subscribe( () => {
       this.getAllUsers();
     });
   }
