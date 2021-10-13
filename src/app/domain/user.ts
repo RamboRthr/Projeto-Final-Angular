@@ -9,7 +9,7 @@ export class User {
     Phone: string = '';
     District: string = "" 
     Street: string = "";
-    House_number: string = '';
+    HouseNumber: string = '';
     CEP: string = '';  
     BirthDate: Date = new Date();
     Password: string = '';
