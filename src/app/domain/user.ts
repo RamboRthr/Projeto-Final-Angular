@@ -13,8 +13,4 @@ export class User {
     CEP: string = '';  
     BirthDate: Date = new Date();
     Password: string = '';
-    Adopted: boolean = false;
-    Donated: boolean = false;
-    pets: Pet[] = [];
-    logged: boolean = false;
 }

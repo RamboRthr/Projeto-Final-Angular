@@ -18,7 +18,6 @@ export class PetMenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.petService.getAllPets();
-    this.userService.getLogged();
   }
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, { class: 'modal-sm' });

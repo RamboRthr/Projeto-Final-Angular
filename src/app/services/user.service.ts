@@ -25,22 +25,6 @@ export class UserService {
       this.list = data;
     })
   }
-
-  getLogged(){
-    this.logged.Name = "Cleitin"
-    this.logged.CPF = "12345678910"
-    this.logged.District = "Progresso"
-    this.logged.Street = "Rua da Banana"
-    this.logged.Email = "cleitin@hotmail.com"
-    this.logged.House_number = "7"
-    this.logged.Surname = "Da Massa"
-    this.logged.Phone = "9999-9999"
-    this.logged.CEP = "99.999-999"
-    this.logged.Password = "senhadaoradocleitin"
-    this.logged.pets = [];
-    this.logged.Id = 1
-  }
-
   getUser(id: number)
   {
     return this.httpClient.get<User>(this.BASE_URL+ `/${id}`).subscribe((data) =>

@@ -24,7 +24,6 @@ export class PetComponent implements OnInit {
   photoToUpload: Photo = new Photo;
 
   ngOnInit(): void {
-    this.userService.getLogged();
   }
 
   onSubmit(form: any, template: TemplateRef<any>) {
