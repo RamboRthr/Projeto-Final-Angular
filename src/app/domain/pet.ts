@@ -1,4 +1,3 @@
-import { User } from './user';
 import { Photo } from "./photo";
 
 export class Pet {
