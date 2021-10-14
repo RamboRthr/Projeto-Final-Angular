@@ -8,17 +8,16 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
+
 export class UserComponent implements OnInit {
 
-  constructor(public userService: UserService, private routerService: Router,
-    private bsModalRef: BsModalRef,
-    private modalService: BsModalService) { }
+  constructor(public userService: UserService, private modalService: BsModalService) { }
 
   modalRef?: BsModalRef;
+  password1: string = "";
 
   ngOnInit(): void {}
   
-  password1: string = "";
   
   onSubmit(form : any, template: TemplateRef<any>){
     if(this.verifyPassword(this.password1, this.userService.UserRequestModel.Password) == true)

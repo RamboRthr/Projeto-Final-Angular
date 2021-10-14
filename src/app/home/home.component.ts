@@ -15,7 +15,4 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.petService.getAllPets();
   }
-  getUser(id: number): void {
-    this.userService.getUser(id);
-  }
 }

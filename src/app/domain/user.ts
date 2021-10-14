@@ -1,14 +1,14 @@
 import { Pet } from "./pet";
 
 export class User {
-    Id: number = 0;
-    Name : string = '';
-    Surname: string = '';
-    Cpf : string  = '';
-    Email : string= '';
-    Phone: string = '';
-    Street: string = "";
-    HouseNumber: string = '';
+    iId: number = 0;
+    name : string = '';
+    surname: string = '';
+    cpf : string  = '';
+    email : string= '';
+    phone: string = '';
+    street: string = "";
+    houseNumber: string = '';
     District: string = "" 
     Cep: string = '';  
     BirthDate: string = '';

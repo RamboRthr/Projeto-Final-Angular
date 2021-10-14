@@ -7,7 +7,7 @@
         name="nome"
         class="form-control"
         placeholder="Digite seu nome"
-        [(ngModel)]="this.userService.logged.Name"
+        [(ngModel)]="this.user.name"
         required
         [class.invalid]="nome.invalid && nome.touched"
         minlength="3"
@@ -23,7 +23,7 @@
         name="sobrenome"
         class="form-control"
         placeholder="Digite seu sobrenome"
-        [(ngModel)]="this.userService.logged.Surname"
+        [(ngModel)]="this.user.surname"
         required
         [class.invalid]="sobrenome.invalid && sobrenome.touched"
         minlength="3"
@@ -39,7 +39,7 @@
         name="telefone"
         class="form-control"
         placeholder="(47) 99124-1245"
-        [(ngModel)]="this.userService.logged.Phone"
+        [(ngModel)]="this.user.phone"
         required
         [class.invalid]="telefone.invalid && telefone.touched"
         minlength="11"
@@ -54,9 +54,9 @@
     <div class="mb-3">
       <label>Cpf</label>
       <input
-        name="Cpf"
+        name="cpf"
         class="form-control"
-        [(ngModel)]="this.userService.logged.Cpf"
+        [(ngModel)]="this.user.Cpf"
         #Cpf="ngModel"
         disabled
       />
@@ -68,7 +68,7 @@
         name="email"
         type="email"
         class="form-control"
-        [(ngModel)]="this.userService.logged.Email"
+        [(ngModel)]="this.user.Email"
         #email="ngModel"
         disabled
       />
@@ -80,7 +80,7 @@
         name="password"
         type="password"
         class="form-control"
-        [(ngModel)] = "this.userService.logged.Password"
+        [(ngModel)] = "this.user.Password"
         [class.invalid]="password.invalid && password.touched"
         required
         minlength="6"
@@ -151,7 +151,7 @@
         type="email"
         class="form-control"
         placeholder="Ex: Rua general osorio"
-        [(ngModel)]="this.userService.logged.Street"
+        [(ngModel)]="this.user.Street"
         required
         [class.invalid]="rua.invalid && rua.touched"
         minlength="2"
@@ -166,7 +166,7 @@
         name="numeroCasa"
         class="form-control"
         placeholder="Ex: 365"
-        [(ngModel)]="this.userService.logged.HouseNumber"
+        [(ngModel)]="this.user.HouseNumber"
         required
         [class.invalid]="numeroCasa.invalid && numeroCasa.touched"
         minlength="2"
@@ -182,7 +182,7 @@
         type="Cep"
         class="form-control"
         placeholder="Ex.:00000-000"
-        [(ngModel)]="this.userService.logged.Cep"
+        [(ngModel)]="this.user.Cep"
         required
         [class.invalid]="Cep.invalid && Cep.touched"
         minlength="8"

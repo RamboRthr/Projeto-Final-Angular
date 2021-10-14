@@ -21,6 +21,7 @@ export class PetPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.petService.getPet(this.pet.id);
-    this.user = this.userService.logged
+    this.userService.getUser(13)
+    this.user = this.userService.UserRequestModel
   }
 }

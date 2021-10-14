@@ -17,7 +17,7 @@
         #nome="ngModel" 
         class="form-control" 
         placeholder="Digite o nome do pet"
-        [(ngModel)]="this.petService.petRequestModel.Name" 
+        [(ngModel)]="this.petService.petRequestModel.name" 
         [class.invalid]="nome.invalid && nome.touched"
         />
       </div>
@@ -33,7 +33,7 @@
         #animal="ngModel" 
         class="form-control" 
         placeholder="Ex: cachorro"
-        [(ngModel)]="this.petService.petRequestModel.Specie" 
+        [(ngModel)]="this.petService.petRequestModel.specie" 
         [class.invalid]="animal.invalid && animal.touched"
         />
       </div>
@@ -48,7 +48,7 @@
         #raca="ngModel" 
         class="form-control" 
         placeholder="Ex: vira-lata" 
-        [(ngModel)]="this.petService.petRequestModel.Breed"
+        [(ngModel)]="this.petService.petRequestModel.breed"
         />
       </div>
       
@@ -63,7 +63,7 @@
         #anos="ngModel"  
         style="width: 50%" 
         class="form-control" 
-        [(ngModel)]="this.petService.petRequestModel.AgeYears" 
+        [(ngModel)]="this.petService.petRequestModel.ageYears" 
         [class.invalid]="anos.invalid && anos.touched" 
         />
         <input 
@@ -75,7 +75,7 @@
         #meses="ngModel"
         style="width: 50%" 
         class="form-control" 
-        [(ngModel)]="this.petService.petRequestModel.AgeMonths"
+        [(ngModel)]="this.petService.petRequestModel.ageMonths"
         [class.invalid]="meses.invalid && meses.touched" 
         />
       </div>
@@ -87,7 +87,7 @@
         type="list"
         #porte="ngModel"
         class="form-select" 
-        [(ngModel)]="this.petService.petRequestModel.Size" 
+        [(ngModel)]="this.petService.petRequestModel.size" 
         >
           <option selected value="1">Pequeno</option>
           <option value="2">Médio</option>
@@ -116,7 +116,7 @@
         id="exampleFormControlTextarea1" 
         #description="ngModel"
         class="form-control" 
-        [(ngModel)]="this.petService.petRequestModel.Description" 
+        [(ngModel)]="this.petService.petRequestModel.description" 
         >
       </textarea>
       </div>

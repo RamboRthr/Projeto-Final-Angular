@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../domain/user';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -8,9 +9,13 @@ import { UserService } from '../services/user.service';
 })
 export class UserMenuComponent implements OnInit {
 
+  public user: User = new User()
+  
   constructor(public userService: UserService) { }
 
   ngOnInit(): void {
+    this.userService.getUser(6)
+    this.user = this.userService.UserRequestModel
   }
 
   onSubmit(form: any) {

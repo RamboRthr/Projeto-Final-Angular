@@ -3,6 +3,7 @@ import { Pet } from '../domain/pet';
 import { PetService } from '../services/pet.service';
 import { UserService } from '../services/user.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { User } from '../domain/user';
 @Component({
   selector: 'app-pet-menu',
   templateUrl: './pet-menu.component.html',
@@ -10,6 +11,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class PetMenuComponent implements OnInit {
 
+  public user: User = new User()
   constructor(public petService: PetService, public userService: UserService,
     private modalService: BsModalService) { }
 
@@ -17,6 +19,8 @@ export class PetMenuComponent implements OnInit {
   message?: string;
 
   ngOnInit(): void {
+    this.userService.getUser(6)
+    this.user = this.userService.UserRequestModel
     this.petService.getAllPets();
   }
   openModal(template: TemplateRef<any>) {

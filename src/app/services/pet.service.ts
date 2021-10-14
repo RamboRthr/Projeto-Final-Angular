@@ -18,14 +18,13 @@ export class PetService {
     this.httpClient.get<any>(this.BASE_URL + `/get-all-pets`).subscribe((data) =>{
       console.log(data);
       this.listPet = data;
-      console.log(this.listPet);
-      debugger;
     });
   }
 
   getPet(id: number)
   {
-    return this.httpClient.get<Pet>(this.BASE_URL+ `/${id}`).subscribe((data) =>
+    console.log(this.BASE_URL+ `/get-pet-by-${id}`)
+    return this.httpClient.get<Pet>(this.BASE_URL+ `/get-pet-by-${id}`).subscribe((data) =>
     {
       this.petRequestModel = data;
     })

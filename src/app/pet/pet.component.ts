@@ -1,5 +1,3 @@
-import { HttpHeaders } from '@angular/common/http';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Photo } from '../domain/photo';
 import { PetService } from '../services/pet.service';
@@ -24,11 +22,11 @@ export class PetComponent implements OnInit {
   photoToUpload: Photo = new Photo;
 
   ngOnInit(): void {
+    this.petService.petRequestModel.userId = 13
   }
 
   onSubmit(form: any, template: TemplateRef<any>) {
     this.postPet();
-    this.uploadFileToActivity();
     this.modalRef = this.modalService.show(template);
   }
 
