@@ -22,7 +22,7 @@ export class PetComponent implements OnInit {
   photoToUpload: Photo = new Photo;
 
   ngOnInit(): void {
-    this.petService.petRequestModel.userId = 13
+    this.petService.petRequestModel.userId = 1
   }
 
   onSubmit(form: any, template: TemplateRef<any>) {

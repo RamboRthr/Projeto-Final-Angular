@@ -19,7 +19,7 @@ export class PetMenuComponent implements OnInit {
   message?: string;
 
   ngOnInit(): void {
-    this.userService.getUser(6)
+    this.userService.getUser(1)
     this.user = this.userService.UserRequestModel
     this.petService.getAllPets();
   }

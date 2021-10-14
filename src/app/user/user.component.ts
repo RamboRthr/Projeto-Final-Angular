@@ -20,7 +20,7 @@ export class UserComponent implements OnInit {
   
   
   onSubmit(form : any, template: TemplateRef<any>){
-    if(this.verifyPassword(this.password1, this.userService.UserRequestModel.Password) == true)
+    if(this.verifyPassword(this.password1, this.userService.UserRequestModel.password) == true)
       this.postUser(); 
       this.modalRef = this.modalService.show(template);
   }
@@ -30,7 +30,7 @@ export class UserComponent implements OnInit {
   }
 
   getUser(){
-    this.userService.getUser(this.userService.UserRequestModel.Id);
+    this.userService.getUser(this.userService.UserRequestModel.id);
   }
 
   postUser(){

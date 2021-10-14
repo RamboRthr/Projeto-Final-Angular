@@ -1,7 +1,7 @@
 import { Pet } from "./pet";
 
 export class User {
-    iId: number = 0;
+    id: number = 0;
     name : string = '';
     surname: string = '';
     cpf : string  = '';
@@ -9,8 +9,8 @@ export class User {
     phone: string = '';
     street: string = "";
     houseNumber: string = '';
-    District: string = "" 
-    Cep: string = '';  
-    BirthDate: string = '';
-    Password: string = '';
+    district: string = "" 
+    cep: string = '';  
+    birthDate: string = '';
+    password: string = '';
 }

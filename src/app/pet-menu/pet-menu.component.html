@@ -1,7 +1,7 @@
 <div style="height: 100px;"></div>
 <div class="container">
     <div *ngFor="let pet of this.petService.listPet">
-        <div *ngIf="pet.userId == this.user.Id" class="row">
+        <div *ngIf="pet.userId == this.user.id" class="row">
             <img src="../../assets/cachorro.jfif" class="col-4">
             <div class="col-8">
                 <div><strong>{{pet.name}}</strong></div>

@@ -56,7 +56,7 @@
       <input
         name="cpf"
         class="form-control"
-        [(ngModel)]="this.user.Cpf"
+        [(ngModel)]="this.user.cpf"
         #Cpf="ngModel"
         disabled
       />
@@ -68,7 +68,7 @@
         name="email"
         type="email"
         class="form-control"
-        [(ngModel)]="this.user.Email"
+        [(ngModel)]="this.user.email"
         #email="ngModel"
         disabled
       />
@@ -80,7 +80,7 @@
         name="password"
         type="password"
         class="form-control"
-        [(ngModel)] = "this.user.Password"
+        [(ngModel)] = "this.user.password"
         [class.invalid]="password.invalid && password.touched"
         required
         minlength="6"
@@ -99,7 +99,7 @@
         class="form-select"
         aria-label="Default select example"
         name="bairro"
-        [(ngModel)]="this.userService.UserRequestModel.District"
+        [(ngModel)]="this.userService.UserRequestModel.district"
         #bairro="ngModel"
         style="width: 100%; height: 50%; margin-left: 10px;"
       >
@@ -151,7 +151,7 @@
         type="email"
         class="form-control"
         placeholder="Ex: Rua general osorio"
-        [(ngModel)]="this.user.Street"
+        [(ngModel)]="this.user.street"
         required
         [class.invalid]="rua.invalid && rua.touched"
         minlength="2"
@@ -166,7 +166,7 @@
         name="numeroCasa"
         class="form-control"
         placeholder="Ex: 365"
-        [(ngModel)]="this.user.HouseNumber"
+        [(ngModel)]="this.user.houseNumber"
         required
         [class.invalid]="numeroCasa.invalid && numeroCasa.touched"
         minlength="2"
@@ -182,7 +182,7 @@
         type="Cep"
         class="form-control"
         placeholder="Ex.:00000-000"
-        [(ngModel)]="this.user.Cep"
+        [(ngModel)]="this.user.cep"
         required
         [class.invalid]="Cep.invalid && Cep.touched"
         minlength="8"
