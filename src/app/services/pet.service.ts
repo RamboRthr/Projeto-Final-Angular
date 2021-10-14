@@ -10,14 +10,14 @@ export class PetService {
   BASE_URL = "https://localhost:5001/pet"
   constructor (private httpClient: HttpClient) { }
 
-  public list: Pet[] =  [];
+  public listPet: Pet[] =  [];
   public petRequestModel: Pet = new Pet()
   public isNew : boolean = false;
 
   getAllPets(){
-    this.httpClient.get<any>(this.BASE_URL ).subscribe((data) =>{
+    this.httpClient.get<any>(this.BASE_URL + `/get-all-pets`).subscribe((data) =>{
       console.log(data);
-      this.list = data.$values as Pet[];
+      this.listPet = data.$values as Pet[];
     });
   }
 
