@@ -17,7 +17,7 @@
         #nome="ngModel" 
         class="form-control" 
         placeholder="Digite o nome do pet"
-        [(ngModel)]="this.petService.formData.name" 
+        [(ngModel)]="this.petService.petRequestModel.Name" 
         [class.invalid]="nome.invalid && nome.touched"
         />
       </div>
@@ -33,7 +33,7 @@
         #animal="ngModel" 
         class="form-control" 
         placeholder="Ex: cachorro"
-        [(ngModel)]="this.petService.formData.animal" 
+        [(ngModel)]="this.petService.petRequestModel.Specie" 
         [class.invalid]="animal.invalid && animal.touched"
         />
       </div>
@@ -48,7 +48,7 @@
         #raca="ngModel" 
         class="form-control" 
         placeholder="Ex: vira-lata" 
-        [(ngModel)]="this.petService.formData.breed"
+        [(ngModel)]="this.petService.petRequestModel.Breed"
         />
       </div>
       
@@ -57,25 +57,25 @@
         <input 
         required
         name="anos" 
-        type="number" 
+        type="text" 
         minlength="1" 
         maxlength="2" 
         #anos="ngModel"  
         style="width: 50%" 
         class="form-control" 
-        [(ngModel)]="this.petService.formData.age_years" 
+        [(ngModel)]="this.petService.petRequestModel.AgeYears" 
         [class.invalid]="anos.invalid && anos.touched" 
         />
         <input 
         required 
         name="meses" 
-        type="number" 
+        type="text" 
         minlength="1" 
         maxlength="2" 
         #meses="ngModel"
         style="width: 50%" 
         class="form-control" 
-        [(ngModel)]="this.petService.formData.age_months"
+        [(ngModel)]="this.petService.petRequestModel.AgeMonths"
         [class.invalid]="meses.invalid && meses.touched" 
         />
       </div>
@@ -87,7 +87,7 @@
         type="list"
         #porte="ngModel"
         class="form-select" 
-        [(ngModel)]="this.petService.formData.size" 
+        [(ngModel)]="this.petService.petRequestModel.Size" 
         >
           <option selected value="1">Pequeno</option>
           <option value="2">Médio</option>
@@ -95,17 +95,17 @@
         </select>
       </div>
 
-      <div class="col-md-6" style="padding-top: 10px">
+      <!-- <div class="col-md-6" style="padding-top: 10px">
         <label>Foto</label>
         <input 
         name="foto" 
         type="file" 
         id="file" 
         #foto="ngModel" 
-        [(ngModel)]="this.petService.formData.photos" 
+        [(ngModel)]="this.petService.petRequestModel.photos" 
         (change)="handleFileInput($event)"
         />
-      </div>
+      </div> -->
 
       <div class="col-12">
         <label>Descrição</label>
@@ -116,7 +116,7 @@
         id="exampleFormControlTextarea1" 
         #description="ngModel"
         class="form-control" 
-        [(ngModel)]="this.petService.formData.description" 
+        [(ngModel)]="this.petService.petRequestModel.Description" 
         >
       </textarea>
       </div>

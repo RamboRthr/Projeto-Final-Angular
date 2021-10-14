@@ -6,16 +6,16 @@
             </div>
             <div class="col-md-6">
                 <div class="description">
-                    <p><b>Nome:</b> {{this.petService.formData.name}}</p>
-                    <p><b>Animal:</b> {{this.petService.formData.animal}}</p>
-                    <p><b>Raça:</b> {{this.petService.formData.breed}}</p>
-                    <p><b>Idade:</b> {{this.petService.formData.age_years}} anos e
-                        {{this.petService.formData.age_months}}
+                    <p><b>Nome:</b> {{this.petService.petRequestModel.Name}}</p>
+                    <p><b>Animal:</b> {{this.petService.petRequestModel.Specie}}</p>
+                    <p><b>Raça:</b> {{this.petService.petRequestModel.Breed}}</p>
+                    <p><b>Idade:</b> {{this.petService.petRequestModel.AgeYears}} anos e
+                        {{this.petService.petRequestModel.AgeMonths}}
                         meses
                     </p>
-                    <p><b>Dono:</b> {{this.petService.formData.current_owner_id}}</p>
+                    <p><b>Dono:</b> {{this.petService.petRequestModel.UserId}}</p>
                     <p><b>Endereço:</b> {{this.user.Street}}, n° {{this.user.HouseNumber}} - {{this.user.District}}</p>
-                    <p><b>Descrição:</b> {{this.petService.formData.description}}</p>
+                    <p><b>Descrição:</b> {{this.petService.petRequestModel.Description}}</p>
                     <div>
                         <div>
                             <div class="divAdotar">
@@ -23,7 +23,7 @@
                             </div>
                             <div class="divReportar">
                                 <a type="button" class="btn btn-danger"
-                                    [routerLink]="['/report-page/', this.petService.formData.id]">Reportar</a>
+                                    [routerLink]="['/report-page/', this.petService.petRequestModel.id]">Reportar</a>
                             </div>
                             <div class="divVoltar">
                                 <a type="button" class="btn btn-primary"

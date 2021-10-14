@@ -7,11 +7,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PetService {
 
-  BASE_URL = "https://localhost:44356/api/Pets"
+  BASE_URL = "https://localhost:5001/pet"
   constructor (private httpClient: HttpClient) { }
 
   public list: Pet[] =  [];
-  public formData: Pet = new Pet()
+  public petRequestModel: Pet = new Pet()
   public isNew : boolean = false;
 
   getAllPets(){
@@ -25,12 +25,12 @@ export class PetService {
   {
     return this.httpClient.get<Pet>(this.BASE_URL+ `/${id}`).subscribe((data) =>
     {
-      this.formData = data;
+      this.petRequestModel = data;
     })
   }
-
+  
   postPet(){
-    return this.httpClient.post(this.BASE_URL, this.formData).subscribe( () => {
+    return this.httpClient.post(this.BASE_URL+ `/create-pet`, this.petRequestModel).subscribe( () => {
       this.getAllPets();
     });
   }

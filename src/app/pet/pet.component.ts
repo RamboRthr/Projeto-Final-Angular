@@ -27,32 +27,32 @@ export class PetComponent implements OnInit {
   }
 
   onSubmit(form: any, template: TemplateRef<any>) {
-    this.petService.formData.current_owner_id = this.userService.logged.Id;
+    this.petService.petRequestModel.UserId = this.userService.logged.Id;
     this.postPet();
     this.uploadFileToActivity();
     this.modalRef = this.modalService.show(template);
   }
 
   update() {
-    this.petService.updatePet(this.petService.formData);
+    this.petService.updatePet(this.petService.petRequestModel);
   }
 
   getPet() {
-    this.petService.getPet(this.petService.formData.id);
+    this.petService.getPet(this.petService.petRequestModel.id);
   }
 
   postPet() {
     this.petService.postPet();
   }
 
-  handleFileInput(event: Event) {
-    const element = event.currentTarget as HTMLInputElement;
-    let files: FileList | null = element.files;
-    this.photoToUpload.PhotoPath = files?.item(0)?.name as string;
-    this.photoToUpload.PhotoContent = files?.item(0) as File;
-    this.petService.formData.photos.push(this.photoToUpload)
-    debugger
-  }
+  // handleFileInput(event: Event) {
+  //   const element = event.currentTarget as HTMLInputElement;
+  //   let files: FileList | null = element.files;
+  //   this.photoToUpload.PhotoPath = files?.item(0)?.name as string;
+  //   this.photoToUpload.PhotoContent = files?.item(0) as File;
+  //   this.petService.formData.photos.push(this.photoToUpload)
+  //   debugger
+  // }
 
   uploadFileToActivity() {
     this.photoUploadService.postFile(this.photoToUpload);
