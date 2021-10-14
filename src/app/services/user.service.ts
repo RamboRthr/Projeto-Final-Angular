@@ -12,7 +12,7 @@ export class UserService {
   constructor( private httpClient: HttpClient) { }
 
   public list: User[] = [];
-  public formData: User = new User();
+  public UserRequestModel: User = new User();
   public isNew : boolean = false;
 
   public logged: User = new User();
@@ -29,12 +29,12 @@ export class UserService {
   {
     return this.httpClient.get<User>(this.BASE_URL+ `/${id}`).subscribe((data) =>
     {
-      this.formData = data;
+      this.UserRequestModel = data;
     })
   }
 
   postUser(){
-    return this.httpClient.post(this.BASE_URL+`/create-user`, this.formData).subscribe( () => {
+    return this.httpClient.post(this.BASE_URL+`/create-user`, this.UserRequestModel).subscribe( () => {
       this.getAllUsers();
     });
   }

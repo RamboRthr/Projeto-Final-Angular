@@ -8,7 +8,7 @@
           name="nome"
           class="form-control"
           placeholder="Digite seu nome"
-          [(ngModel)]="this.userService.formData.Name"
+          [(ngModel)]="this.userService.UserRequestModel.Name"
           required
           [class.invalid]="nome.invalid && nome.touched"
           minlength="3"
@@ -23,7 +23,7 @@
           name="sobrenome"
           class="form-control"
           placeholder="Digite seu sobrenome"
-          [(ngModel)]="this.userService.formData.Surname"
+          [(ngModel)]="this.userService.UserRequestModel.Surname"
           required
           [class.invalid]="sobrenome.invalid && sobrenome.touched"
           minlength="3"
@@ -39,7 +39,7 @@
                 placeholder="(__) _____-____"
                 name="phone"
                 #phone="ngModel"
-                [(ngModel)]="this.userService.formData.Phone"
+                [(ngModel)]="this.userService.UserRequestModel.Phone"
                 onkeyup="
                             var phone = this.value;
                             if (phone.match(/^[A-Z]|[a-z]$/) !== null){
@@ -76,7 +76,7 @@
           name="diaNascimento"
           type="date"
           class="form-control"
-          [(ngModel)]="this.userService.formData.BirthDate"
+          [(ngModel)]="this.userService.UserRequestModel.BirthDate"
           required
           [class.invalid]="diaNascimento.invalid && diaNascimento.touched"
           minlength="8"
@@ -92,7 +92,7 @@
                 placeholder="___.___.___-__"
                 name="Cpf"
                 #Cpf="ngModel"
-                [(ngModel)]="this.userService.formData.Cpf"
+                [(ngModel)]="this.userService.UserRequestModel.Cpf"
                 onkeyup="
                             var Cpf = this.value;
                             if (Cpf.match(/^[A-Z]|[a-z]$/) !== null){
@@ -126,7 +126,7 @@
           name="email"
           type="email"
           class="form-control"
-          [(ngModel)]="this.userService.formData.Email"
+          [(ngModel)]="this.userService.UserRequestModel.Email"
           required
           [class.invalid]="email.invalid && email.touched"
           minlength="2"
@@ -157,7 +157,7 @@
           class="form-control"
           required
           *ngIf="password1"
-          [(ngModel)]="this.userService.formData.Password"
+          [(ngModel)]="this.userService.UserRequestModel.Password"
           [class.invalid]="password2.invalid && password2.touched "
           minlength="6"
           maxlength="60"
@@ -171,7 +171,7 @@
           class="form-select"
           aria-label="Default select example"
           name="bairro"
-          [(ngModel)]="this.userService.formData.District"
+          [(ngModel)]="this.userService.UserRequestModel.District"
           #bairro="ngModel"
         >
           <option selected>Selecione</option>
@@ -224,7 +224,7 @@
           type="email"
           class="form-control"
           placeholder="Ex: Rua Bahia"
-          [(ngModel)]="this.userService.formData.Street"
+          [(ngModel)]="this.userService.UserRequestModel.Street"
           required
           [class.invalid]="rua.invalid && rua.touched"
           minlength="2"
@@ -239,7 +239,7 @@
           name="numeroCasa"
           class="form-control"
           placeholder="Ex: 000"
-          [(ngModel)]="this.userService.formData.HouseNumber"
+          [(ngModel)]="this.userService.UserRequestModel.HouseNumber"
           required
           [class.invalid]="numeroCasa.invalid && numeroCasa.touched"
           minlength="1"
@@ -256,7 +256,7 @@
                 placeholder="_____-___"
                 name="Cep"
                 #Cep="ngModel"
-                [(ngModel)]="this.userService.formData.Cep"
+                [(ngModel)]="this.userService.UserRequestModel.Cep"
                 onkeyup="
                             var Cep = this.value;
                             if (Cep.match(/^[A-Z]|[a-z]$/) !== null){

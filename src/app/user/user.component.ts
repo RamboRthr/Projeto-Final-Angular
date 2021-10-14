@@ -21,17 +21,17 @@ export class UserComponent implements OnInit {
   password1: string = "";
   
   onSubmit(form : any, template: TemplateRef<any>){
-    if(this.verifyPassword(this.password1, this.userService.formData.Password) == true)
+    if(this.verifyPassword(this.password1, this.userService.UserRequestModel.Password) == true)
       this.postUser(); 
       this.modalRef = this.modalService.show(template);
   }
 
   update(){
-    this.userService.updateUser(this.userService.formData);
+    this.userService.updateUser(this.userService.UserRequestModel);
   }
 
   getUser(){
-    this.userService.getUser(this.userService.formData.Id);
+    this.userService.getUser(this.userService.UserRequestModel.Id);
   }
 
   postUser(){

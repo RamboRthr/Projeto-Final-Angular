@@ -18,7 +18,7 @@ export class UserMenuComponent implements OnInit {
   }
   //PRECISA PEGAR O OBJETO DO USUARIO LOGADO
   update() {
-    this.userService.updateUser(this.userService.formData);
+    this.userService.updateUser(this.userService.UserRequestModel);
   }
 
   postUser() {
