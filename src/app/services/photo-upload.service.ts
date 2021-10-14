@@ -19,7 +19,6 @@ export class PhotoUploadService {
 		const httpOptions = {
 			headers: new HttpHeaders({'Content-Type': 'application/json'})
 		  }
-		  debugger;
 		 this.http.post(this.baseApiUrl, photoToUpload, httpOptions).subscribe(data => {
 			console.log(data)
 		});

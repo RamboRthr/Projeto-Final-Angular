@@ -1,13 +1,13 @@
 <div style="height: 100px;"></div>
 <div class="container">
     <div *ngFor="let pet of this.petService.listPet">
-        <div *ngIf="pet.UserId == this.userService.logged.Id" class="row">
+        <div *ngIf="pet.userId == this.userService.logged.Id" class="row">
             <img src="../../assets/cachorro.jfif" class="col-4">
             <div class="col-8">
-                <div><strong>{{pet.Name}}</strong></div>
-                <div>Animal: {{pet.Specie}}</div>
-                <div>Raça: {{pet.Breed}}</div>
-                <div style="max-width: 50px;">Descrição: {{pet.Description}}</div>
+                <div><strong>{{pet.name}}</strong></div>
+                <div>Animal: {{pet.specie}}</div>
+                <div>Raça: {{pet.breed}}</div>
+                <div style="max-width: 50px;">Descrição: {{pet.description}}</div>
                 <button type="button" class="btn btn-danger" (click)="openModal(template)">Excluir</button>
                 <ng-template #template>
                     <div class="modal-body text-center">

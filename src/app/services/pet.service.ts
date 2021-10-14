@@ -17,7 +17,9 @@ export class PetService {
   getAllPets(){
     this.httpClient.get<any>(this.BASE_URL + `/get-all-pets`).subscribe((data) =>{
       console.log(data);
-      this.listPet = data.$values as Pet[];
+      this.listPet = data;
+      console.log(this.listPet);
+      debugger;
     });
   }
 
