@@ -17,6 +17,7 @@ export class LoginService {
         this.httpClient.post<UserLoginResponseModel>(this.BASE_URL + `/authenticate-user`, this.formData).subscribe((data) => {
             localStorage.setItem("jwtToken", data.token);
             localStorage.setItem("loggedUserId", data.userId);
+            console.log(data);
         })
     }
 }

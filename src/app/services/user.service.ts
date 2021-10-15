@@ -55,12 +55,16 @@ export class UserService {
     const token = localStorage.getItem("jwtToken");
 
     if (token && this.jwtHelper.isTokenExpired(token)) {
+      console.log("AUTENTICOU")
       return true;
     }
+    console.log("NÃO AUTENTICOU")
     return false;
   }
   logOut() {
     localStorage.removeItem("jwtToken");
+    localStorage.removeItem("loggedUserId"); 
+    console.log(localStorage)
   }
 
 }
