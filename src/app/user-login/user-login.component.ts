@@ -1,23 +1,25 @@
-import { UserService } from '../services/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, TemplateRef} from '@angular/core';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { LoginService } from '../services/login.service';
+import { UserService } from '../services/user.service';
    
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
   styleUrls: ['./user-login.component.css']
 })
-export class UserLoginComponent implements OnInit {
+export class UserLoginComponent{
 
-  constructor(public userService: UserService, public loginService: LoginService) { }
+  constructor( 
+    public loginService: LoginService, 
+    public userService: UserService,
+    private modalService: BsModalService
+    ) { }
 
-  form_email: string = "";
-  form_password: string = "";
+  modalRef?: BsModalRef;
 
-  ngOnInit(): void {
-    this.userService.getAllUsers()
-  }
-  onSubmit(form : any){
+  onSubmit(form : any, template: TemplateRef<any>){
     this.loginService.login();
+    this.modalRef = this.modalService.show(template);
   }
 }

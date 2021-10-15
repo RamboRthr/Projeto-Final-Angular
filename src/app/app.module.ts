@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './guards/auth-guard.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export function tokenGetter() {
   return localStorage.getItem("jwtToken");
@@ -46,6 +47,7 @@ export function tokenGetter() {
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent},

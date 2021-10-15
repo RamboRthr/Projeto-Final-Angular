@@ -11,14 +11,12 @@ import { Pet } from './domain/entities/pet';
 })
 export class AppComponent {
   title = 'Projeto-Final-Angular';
-  user: User[] = [];
-  pet: Pet[] = [];
 
-  loggedUsers: User[] = [];
-
-  constructor(private userServise: UserService, private petServise: PetService) {}
+  constructor(public petService: PetService, public userService: UserService) { }
   
   ngOnInit(): void{
-    this.userServise.getAllUsers
+  }
+  onSubmit(form: any) {
+    this.userService.logOut();
   }
 }
