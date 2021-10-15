@@ -5,13 +5,14 @@ import { UserRequestModel } from '../domain/models/userModels/userRequestModel';
 import { UserResponseModel } from '../domain/models/userModels/userResponseModel';
 import { UserUpdateRequestModel } from '../domain/models/userModels/userUpdateRequestModel';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Router } from '@angular/router';
 
 @Injectable({providedIn: 'root'})
 
 export class UserService {
 
   BASE_URL = "https://localhost:5001/user"
-  constructor( private httpClient: HttpClient, public jwtHelper : JwtHelperService) { }
+  constructor( private httpClient: HttpClient, public jwtHelper : JwtHelperService, private router: Router) { }
 
   public listOfUserResponseModels: UserResponseModel[] = [];
   public userRequestModel: UserRequestModel = new UserRequestModel();
@@ -29,7 +30,8 @@ export class UserService {
   {
     return this.httpClient.get<UserResponseModel>(this.BASE_URL+ `/get-user-by-${userId}`).subscribe((data) =>
     {
-      this.user = data;
+      console.log(data);
+      this.userResponseModel = data;
     })
   }
 
@@ -53,18 +55,29 @@ export class UserService {
   }
   isUserAuthenticated() {
     const token = localStorage.getItem("jwtToken");
-
-    if (token && this.jwtHelper.isTokenExpired(token)) {
-      console.log("AUTENTICOU")
+    if (token == 'null'){
+      return false;
+    }
+    else (token && !this.jwtHelper.isTokenExpired(token)); {
       return true;
     }
-    console.log("NÃO AUTENTICOU")
-    return false;
   }
+
   logOut() {
-    localStorage.removeItem("jwtToken");
+    localStorage.setItem("jwtToken", "null");
     localStorage.removeItem("loggedUserId"); 
     console.log(localStorage)
+  }
+
+  goToLogin() {
+    const token = localStorage.getItem("jwtToken");
+    if (token == 'null'){
+      return this.router.navigate(['/user-login']);
+
+    }
+    else (token && !this.jwtHelper.isTokenExpired(token)); {
+      return true;
+    }
   }
 
 }

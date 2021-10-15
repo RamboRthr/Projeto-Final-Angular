@@ -1,4 +1,4 @@
-<body>
+<body *ngIf="this.userService.goToLogin()">
     <main>
         <div class="row">
             <div class="photo">
@@ -13,8 +13,8 @@
                         {{this.petService.petResponseModel.ageMonths}}
                         meses
                     </p>
-                    <p><b>Dono:</b> {{this.userRequestModel.name}}</p>
-                    <p><b>Endereço:</b> {{this.userRequestModel.street}}, n° {{this.userRequestModel.houseNumber}} - {{this.userRequestModel.district}}</p>
+                    <p><b>Dono:</b> {{this.userResponseModel.name}}</p>
+                    <p><b>Endereço:</b> {{this.userResponseModel.street}}, n° {{this.userResponseModel.houseNumber}} - {{this.userResponseModel.district}}</p>
                     <p><b>Descrição:</b> {{this.petService.petResponseModel.description}}</p>
                     <div>
                         <div>

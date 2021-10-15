@@ -29,6 +29,7 @@ export class PetService {
   {
     return this.httpClient.get<PetResponseModel>(this.BASE_URL+ `/get-pet-by-${petId}`).subscribe((data) =>
     {
+      console.log(data);
       this.petResponseModel = data;
     })
   }

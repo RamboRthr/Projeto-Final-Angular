@@ -21,7 +21,10 @@ body {
     background-image: url(../../assets/card.png);
     background-repeat: no-repeat;
     background-size: cover;
-}   
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
 
 .petCard{
     margin-bottom: 5%;

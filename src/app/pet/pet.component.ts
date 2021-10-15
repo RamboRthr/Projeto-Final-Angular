@@ -22,7 +22,8 @@ export class PetComponent implements OnInit {
   photoToUpload: Photo = new Photo;
 
   ngOnInit(): void {
-    this.petService.petRequestModel.userId = 1
+    const token = localStorage.getItem("loggedUserId");
+    this.petService.petRequestModel.userId = parseInt("1");
   }
 
   onSubmit(form: any, template: TemplateRef<any>) {
