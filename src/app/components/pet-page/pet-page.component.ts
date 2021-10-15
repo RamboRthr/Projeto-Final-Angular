@@ -1,8 +1,8 @@
-import { UserService } from './../services/user.service';
-import { User } from './../domain/user';
-import { Pet } from './../domain/pet';
+import { UserService } from '../../services/user.service';
+import { User } from '../../domain/user';
+import { Pet } from '../../domain/pet';
 import { Component, OnInit } from '@angular/core';
-import { PetService } from '../services/pet.service';
+import { PetService } from '../../services/pet.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

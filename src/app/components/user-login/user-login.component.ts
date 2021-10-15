@@ -1,5 +1,5 @@
-import { UserService } from '../services/user.service';
-import { Pet } from './../domain/pet';
+import { UserService } from '../../services/user.service';
+import { Pet } from '../../domain/pet';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 

@@ -1,8 +1,8 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { Pet } from '../domain/pet';
-import { PetService } from '../services/pet.service';
+import { Pet } from '../../domain/pet';
+import { PetService } from '../../services/pet.service';
 
 @Component({
   selector: 'app-report-page',

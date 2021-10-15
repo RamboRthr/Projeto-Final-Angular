@@ -1,4 +1,4 @@
-import { UserService } from '../services/user.service';
+import { UserService } from '../../services/user.service';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';

@@ -1,8 +1,8 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { Photo } from '../domain/photo';
-import { PetService } from '../services/pet.service';
-import { PhotoUploadService } from '../services/photo-upload.service';
-import { UserService } from '../services/user.service';
+import { Photo } from '../../domain/photo';
+import { PetService } from '../../services/pet.service';
+import { PhotoUploadService } from '../../services/photo-upload.service';
+import { UserService } from '../../services/user.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({

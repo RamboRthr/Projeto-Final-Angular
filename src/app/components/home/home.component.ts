@@ -1,7 +1,7 @@
-import { UserService } from '../services/user.service';
-import { PetService } from './../services/pet.service';
+import { UserService } from '../../services/user.service';
+import { PetService } from '../../services/pet.service';
 import { Component, OnInit } from '@angular/core';
-import { User } from '../domain/user';
+import { User } from '../../domain/user';
 
 @Component({
   selector: 'app-home',
