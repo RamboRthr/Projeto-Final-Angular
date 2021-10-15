@@ -2,25 +2,26 @@
   <section class="container">
     <main class="form-signin">
       <h1 class="h3 mb-3 fw-normal" style="text-align:center;">Faça o Login</h1>
+      <form novalidate #form="ngForm" (submit)="onSubmit(form)" >
+        <div class="form-floating">
+          <label for="floatingInput">Name:</label>
+          <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="email"
+            [(ngModel)]="this.form_email" #email="ngModel">
+        </div>
+        <div class="form-floating2">
+          <label class="FloatPassword" for="floatingPassword">Senha:</label>
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
+            [(ngModel)]="this.form_password">
 
-      <div class="form-floating">
-        <label for="floatingInput">Name:</label>
-        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="email"
-          [(ngModel)]="this.form_email" #email="ngModel">
-      </div>
-      <div class="form-floating2">
-        <label class="FloatPassword" for="floatingPassword">Senha:</label>
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
-          [(ngModel)]="this.form_password">
+        </div>
 
-      </div>
-
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Lembrar minhas informações
-        </label>
-      </div>
-      <button class="w-100 btn btn-lg btn-primary" type="button">Entrar</button>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Lembrar minhas informações
+          </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="button">Entrar</button>
+      </form>
     </main>
   </section>
 </body>

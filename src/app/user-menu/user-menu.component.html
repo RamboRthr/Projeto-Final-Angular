@@ -7,7 +7,7 @@
         name="nome"
         class="form-control"
         placeholder="Digite seu nome"
-        [(ngModel)]="this.user.name"
+        [(ngModel)]="this.userRequestModel.name"
         required
         [class.invalid]="nome.invalid && nome.touched"
         minlength="3"
@@ -23,7 +23,7 @@
         name="sobrenome"
         class="form-control"
         placeholder="Digite seu sobrenome"
-        [(ngModel)]="this.user.surname"
+        [(ngModel)]="this.userRequestModel.surname"
         required
         [class.invalid]="sobrenome.invalid && sobrenome.touched"
         minlength="3"
@@ -39,7 +39,7 @@
         name="telefone"
         class="form-control"
         placeholder="(47) 99124-1245"
-        [(ngModel)]="this.user.phone"
+        [(ngModel)]="this.userRequestModel.phone"
         required
         [class.invalid]="telefone.invalid && telefone.touched"
         minlength="11"
@@ -56,7 +56,7 @@
       <input
         name="cpf"
         class="form-control"
-        [(ngModel)]="this.user.cpf"
+        [(ngModel)]="this.userRequestModel.cpf"
         #Cpf="ngModel"
         disabled
       />
@@ -68,7 +68,7 @@
         name="email"
         type="email"
         class="form-control"
-        [(ngModel)]="this.user.email"
+        [(ngModel)]="this.userRequestModel.email"
         #email="ngModel"
         disabled
       />
@@ -80,7 +80,7 @@
         name="password"
         type="password"
         class="form-control"
-        [(ngModel)] = "this.user.password"
+        [(ngModel)] = "this.userRequestModel.password"
         [class.invalid]="password.invalid && password.touched"
         required
         minlength="6"
@@ -99,7 +99,7 @@
         class="form-select"
         aria-label="Default select example"
         name="bairro"
-        [(ngModel)]="this.userService.UserRequestModel.district"
+        [(ngModel)]="this.userRequestModel.district"
         #bairro="ngModel"
         style="width: 100%; height: 50%; margin-left: 10px;"
       >
@@ -151,7 +151,7 @@
         type="email"
         class="form-control"
         placeholder="Ex: Rua general osorio"
-        [(ngModel)]="this.user.street"
+        [(ngModel)]="this.userRequestModel.street"
         required
         [class.invalid]="rua.invalid && rua.touched"
         minlength="2"
@@ -166,7 +166,7 @@
         name="numeroCasa"
         class="form-control"
         placeholder="Ex: 365"
-        [(ngModel)]="this.user.houseNumber"
+        [(ngModel)]="this.userRequestModel.houseNumber"
         required
         [class.invalid]="numeroCasa.invalid && numeroCasa.touched"
         minlength="2"
@@ -182,7 +182,7 @@
         type="Cep"
         class="form-control"
         placeholder="Ex.:00000-000"
-        [(ngModel)]="this.user.cep"
+        [(ngModel)]="this.userRequestModel.cep"
         required
         [class.invalid]="Cep.invalid && Cep.touched"
         minlength="8"

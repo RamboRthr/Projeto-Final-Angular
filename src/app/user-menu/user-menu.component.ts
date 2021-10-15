@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../domain/user';
+import { User } from '../domain/entities/user';
+import { UserRequestModel } from '../domain/models/userModels/userRequestModel';
+import { UserResponseModel } from '../domain/models/userModels/userResponseModel';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -9,22 +11,21 @@ import { UserService } from '../services/user.service';
 })
 export class UserMenuComponent implements OnInit {
 
-  public user: User = new User()
+  public userRequestModel: UserRequestModel = new UserRequestModel()
   
   constructor(public userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getUser(6)
-    this.user = this.userService.UserRequestModel
+    this.userService.getUserById(6)
+    this.userRequestModel = this.userService.userRequestModel
   }
 
   onSubmit(form: any) {
-    this.update();
   }
-  //PRECISA PEGAR O OBJETO DO USUARIO LOGADO
-  update() {
-    this.userService.updateUser(this.userService.UserRequestModel);
-  }
+
+  // update() {
+  //   this.userService.updateUser(this.userService.userUpdateRequestModel);
+  // }
 
   postUser() {
     this.userService.postUser();

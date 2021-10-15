@@ -1,7 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { Pet } from '../domain/pet';
+import { Pet } from '../domain/entities/pet';
 import { PetService } from '../services/pet.service';
 
 @Component({
@@ -20,7 +20,7 @@ export class ReportPageComponent implements OnInit {
   modalRef?: BsModalRef;
 
   ngOnInit(): void {
-    this.petService.getPet(this.pet.id);
+    this.petService.getPetById(this.pet.id);
     this.petService.getAllPets();
   }
 

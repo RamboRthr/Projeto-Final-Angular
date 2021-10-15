@@ -1,9 +1,9 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { Photo } from '../domain/photo';
 import { PetService } from '../services/pet.service';
-import { PhotoUploadService } from '../services/photo-upload.service';
+import { PhotoUploadService } from '../services/photoUpload.service';
 import { UserService } from '../services/user.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { Photo } from '../domain/entities/photo';
 
 @Component({
   selector: 'app-pet',
@@ -28,14 +28,6 @@ export class PetComponent implements OnInit {
   onSubmit(form: any, template: TemplateRef<any>) {
     this.postPet();
     this.modalRef = this.modalService.show(template);
-  }
-
-  update() {
-    this.petService.updatePet(this.petService.petRequestModel);
-  }
-
-  getPet() {
-    this.petService.getPet(this.petService.petRequestModel.id);
   }
 
   postPet() {

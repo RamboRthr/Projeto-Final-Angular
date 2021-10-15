@@ -1,41 +1,47 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../domain/user';
+import { User } from '../domain/entities/user';
+import { UserRequestModel } from '../domain/models/userModels/userRequestModel';
+import { UserResponseModel } from '../domain/models/userModels/userResponseModel';
+import { UserUpdateRequestModel } from '../domain/models/userModels/userUpdateRequestModel';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
+
 export class UserService {
 
   BASE_URL = "https://localhost:5001/user"
-  constructor( private httpClient: HttpClient) { }
+  constructor( private httpClient: HttpClient, public jwtHelper : JwtHelperService) { }
 
-  public list: User[] = [];
-  public UserRequestModel: User = new User();
+  public listOfUserResponseModels: UserResponseModel[] = [];
+  public userRequestModel: UserRequestModel = new UserRequestModel();
+  public userResponseModel: UserResponseModel = new UserResponseModel();
+  public userUpdateRequestModel: UserUpdateRequestModel = new UserUpdateRequestModel();
+  public user: User = new User();
 
   getAllUsers(){
-    // this.httpClient.get<User[]>(this.BASE_URL ).subscribe((data) =>{
-    //   console.log(data);
-    //   this.list = data;
-    // })
+      this.httpClient.get<UserResponseModel[]>(this.BASE_URL+`/get-all-users`).subscribe((data) =>{
+      this.listOfUserResponseModels = data;
+    })
   }
-  getUser(id: number)
+
+  getUserById(userId: number)
   {
-    console.log(this.BASE_URL+ `/get-user-by-${id}` )
-    return this.httpClient.get<User>(this.BASE_URL+ `/get-user-by-${id}`).subscribe((data) =>
+    return this.httpClient.get<UserResponseModel>(this.BASE_URL+ `/get-user-by-${userId}`).subscribe((data) =>
     {
-      this.UserRequestModel = data;
+      this.user = data;
     })
   }
 
   postUser(){
-    return this.httpClient.post(this.BASE_URL+`/create-user`, this.UserRequestModel).subscribe( () => {
+    return this.httpClient.post(this.BASE_URL+`/create-user`, this.userRequestModel).subscribe( () => 
+    {
       this.getAllUsers();
     });
   }
 
-  updateUser(user:User){
-    // return this.httpClient.put<User>(this.BASE_URL+ `/${user.Id}`, user).subscribe( () => {
+  updateUser(userUpdateRequestModel: UserUpdateRequestModel){
+    // return this.httpClient.put(this.BASE_URL+ `/${user.Id}`, user).subscribe( () => {
     //   this.getAllUsers();
     // }); 
   }
@@ -45,6 +51,18 @@ export class UserService {
     //   this.getAllUsers();
     // })
   }
+  isUserAuthenticated() {
+    const token = localStorage.getItem("jwtToken");
+
+    if (token && this.jwtHelper.isTokenExpired(token)) {
+      return true;
+    }
+    return false;
+  }
+  logOut() {
+    localStorage.removeItem("jwtToken");
+  }
+
 }
 
 

@@ -1,8 +1,8 @@
 import { UserService } from './services/user.service';
-import { User } from './domain/user';
 import { PetService } from './services/pet.service';
-import { Pet } from './domain/pet';
 import { Component } from '@angular/core';
+import { User } from './domain/entities/user';
+import { Pet } from './domain/entities/pet';
 
 @Component({
   selector: 'app-root',

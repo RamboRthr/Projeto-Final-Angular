@@ -1,7 +1,5 @@
-import { Pet } from "./pet";
-
-export class User {
-    id: number = 0;
+export class UserResponseModel {
+    id : number = 0;
     name : string = '';
     surname: string = '';
     cpf : string  = '';

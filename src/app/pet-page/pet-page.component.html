@@ -6,16 +6,16 @@
             </div>
             <div class="col-md-6">
                 <div class="description">
-                    <p><b>Nome:</b> {{this.petService.petRequestModel.name}}</p>
-                    <p><b>Animal:</b> {{this.petService.petRequestModel.specie}}</p>
-                    <p><b>Raça:</b> {{this.petService.petRequestModel.breed}}</p>
-                    <p><b>Idade:</b> {{this.petService.petRequestModel.ageYears}} anos e
-                        {{this.petService.petRequestModel.ageMonths}}
+                    <p><b>Nome:</b> {{this.petService.petResponseModel.name}}</p>
+                    <p><b>Animal:</b> {{this.petService.petResponseModel.specie}}</p>
+                    <p><b>Raça:</b> {{this.petService.petResponseModel.breed}}</p>
+                    <p><b>Idade:</b> {{this.petService.petResponseModel.ageYears}} anos e
+                        {{this.petService.petResponseModel.ageMonths}}
                         meses
                     </p>
-                    <p><b>Dono:</b> {{this.user.name}}</p>
-                    <p><b>Endereço:</b> {{this.user.street}}, n° {{this.user.houseNumber}} - {{this.user.district}}</p>
-                    <p><b>Descrição:</b> {{this.petService.petRequestModel.description}}</p>
+                    <p><b>Dono:</b> {{this.userRequestModel.name}}</p>
+                    <p><b>Endereço:</b> {{this.userRequestModel.street}}, n° {{this.userRequestModel.houseNumber}} - {{this.userRequestModel.district}}</p>
+                    <p><b>Descrição:</b> {{this.petService.petResponseModel.description}}</p>
                     <div>
                         <div>
                             <div class="divAdotar">
@@ -23,7 +23,7 @@
                             </div>
                             <div class="divReportar">
                                 <a type="button" class="btn btn-danger"
-                                    [routerLink]="['/report-page/', this.petService.petRequestModel.id]">Reportar</a>
+                                    [routerLink]="['/report-page/', this.petService.pet.id]">Reportar</a>
                             </div>
                             <div class="divVoltar">
                                 <a type="button" class="btn btn-primary"
