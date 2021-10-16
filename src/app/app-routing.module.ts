@@ -9,6 +9,7 @@ import { PetComponent } from './pet/pet.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
 import { PetPageComponent } from './pet-page/pet-page.component';
 import { PetMenuComponent } from './pet-menu/pet-menu.component';
+import { DonateComponent } from './donate/donate.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'pet-page/:id', component: PetPageComponent },
   { path: 'adopt-page', component: AdoptPageComponent },
   { path: 'pet-menu', component: PetMenuComponent },
-  { path: 'report-page/:id', component: ReportPageComponent }
+  { path: 'report-page/:id', component: ReportPageComponent },
+  {path: 'donate' , component: DonateComponent},
 ];
 
 @NgModule({
