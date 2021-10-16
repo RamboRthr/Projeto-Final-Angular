@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from '../domain/entities/user';
-import { UserRequestModel } from '../domain/models/userModels/userRequestModel';
-import { UserResponseModel } from '../domain/models/userModels/userResponseModel';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { UserService } from '../services/user.service';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+
 
 @Component({
   selector: 'app-user-menu',
@@ -11,24 +10,23 @@ import { UserService } from '../services/user.service';
 })
 export class UserMenuComponent implements OnInit {
 
-  public userRequestModel: UserRequestModel = new UserRequestModel()
-  
-  constructor(public userService: UserService) { }
+  constructor(public userService: UserService,
+    private bsModalRef: BsModalRef,
+    private modalService: BsModalService) { }
 
   ngOnInit(): void {
-    this.userService.getUserById(6)
-    this.userRequestModel = this.userService.userRequestModel
+    const loggedUserId = localStorage.getItem("loggedUserId");
+    this.userService.getUserById(parseInt(loggedUserId!));
   }
 
-  onSubmit(form: any) {
+  modalRef?: BsModalRef;
+
+  onSubmit(form: any, template: TemplateRef<any>) {
+    this.update();
+    this.modalRef = this.modalService.show(template);
   }
 
-  // update() {
-  //   this.userService.updateUser(this.userService.userUpdateRequestModel);
-  // }
-
-  postUser() {
-    this.userService.postUser();
+  update() {
+    this.userService.updateUser(this.userService.userResponseModel);
   }
 }
-

@@ -13,7 +13,6 @@ import { UserResponseModel } from '../domain/models/userModels/userResponseModel
 export class PetPageComponent implements OnInit {
 
   pet: Pet = new Pet;
-  userResponseModel: UserResponseModel = new UserResponseModel;
 
   constructor(public petService: PetService, public userService: UserService, private actRoute: ActivatedRoute) { 
     this.pet.id = this.actRoute.snapshot.params.id;
@@ -21,8 +20,5 @@ export class PetPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.petService.getPetById(this.pet.id);
-    this.userService.getUserById(this.petService.petResponseModel.userId);
-    this.userResponseModel = this.userService.userResponseModel;
-    console.log(this.userResponseModel)
   }
 }

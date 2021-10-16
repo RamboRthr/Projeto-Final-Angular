@@ -4,27 +4,28 @@ import { UserService } from '../services/user.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { User } from '../domain/entities/user';
 import { Pet } from '../domain/entities/pet';
-import { UserRequestModel } from '../domain/models/userModels/userRequestModel';
+
 @Component({
   selector: 'app-pet-menu',
   templateUrl: './pet-menu.component.html',
   styleUrls: ['./pet-menu.component.css']
 })
+
 export class PetMenuComponent implements OnInit {
 
   public user: User = new User()
 
-  constructor(public petService: PetService, public userService: UserService,
-
-  private modalService: BsModalService) { }
+  constructor(
+    public petService: PetService, 
+    public userService: UserService,
+    private modalService: BsModalService
+    ) { }
 
   modalRef?: BsModalRef;
-  message?: string;
 
   ngOnInit(): void {
-    this.userService.getUserById(1)
-    this.user = this.userService.user
-    this.petService.getAllPets();
+    const loggedUserId = localStorage.getItem("loggedUserId");
+    this.petService.getPetsByUserId(parseInt(loggedUserId!));
   }
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, { class: 'modal-sm' });
