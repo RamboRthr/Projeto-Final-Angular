@@ -14,15 +14,4 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.petService.getAllPets();
   }
-  getUserById(id: number): void {
-    this.userService.getUserById(id);
-  }
-
-  isUserAuthenticated() {
-    this.userService.isUserAuthenticated();
-  }
-
-  logOut() {
-    this.userService.logOut();
-  }
 }

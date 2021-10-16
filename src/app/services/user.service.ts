@@ -12,47 +12,41 @@ import { Router } from '@angular/router';
 export class UserService {
 
   BASE_URL = "https://localhost:5001/user"
+
   constructor( private httpClient: HttpClient, public jwtHelper : JwtHelperService, private router: Router) { }
 
   public listOfUserResponseModels: UserResponseModel[] = [];
   public userRequestModel: UserRequestModel = new UserRequestModel();
   public userResponseModel: UserResponseModel = new UserResponseModel();
   public userUpdateRequestModel: UserUpdateRequestModel = new UserUpdateRequestModel();
-  public user: User = new User();
 
   getAllUsers(){
       this.httpClient.get<UserResponseModel[]>(this.BASE_URL+`/get-all-users`).subscribe((data) =>{
       this.listOfUserResponseModels = data;
     })
   }
-
+  
   getUserById(userId: number)
   {
-    return this.httpClient.get<UserResponseModel>(this.BASE_URL+ `/get-user-by-${userId}`).subscribe((data) =>
-    {
-      console.log(data);
+    return this.httpClient.get<UserResponseModel>(this.BASE_URL+ `/get-user-by-${userId}`).subscribe((data) =>{ 
       this.userResponseModel = data;
     })
   }
 
   postUser(){
-    return this.httpClient.post(this.BASE_URL+`/create-user`, this.userRequestModel).subscribe( () => 
-    {
+    return this.httpClient.post(this.BASE_URL+`/create-user`, this.userRequestModel).subscribe( () => {
       this.getAllUsers();
     });
   }
 
   updateUser(userUpdateRequestModel: UserUpdateRequestModel){
-    // return this.httpClient.put(this.BASE_URL+ `/${user.Id}`, user).subscribe( () => {
-    //   this.getAllUsers();
-    // }); 
+    return this.httpClient.put(this.BASE_URL+ `/update-user`, userUpdateRequestModel).subscribe( () => {}); 
   }
 
   deleteUser(user: User){
-    // return this.httpClient.delete<User>(this.BASE_URL+ `/${user.Id}`).subscribe( () => {
-    //   this.getAllUsers();
-    // })
+    return this.httpClient.delete<User>(`/delete-user-by-${user.id}`).subscribe( () => {})
   }
+
   isUserAuthenticated() {
     const token = localStorage.getItem("jwtToken");
     if (token == 'null'){
@@ -66,7 +60,6 @@ export class UserService {
   logOut() {
     localStorage.setItem("jwtToken", "null");
     localStorage.removeItem("loggedUserId"); 
-    console.log(localStorage)
   }
 
   goToLogin() {

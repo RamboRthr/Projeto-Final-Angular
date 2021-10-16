@@ -12,7 +12,7 @@ import { Pet } from './domain/entities/pet';
 export class AppComponent {
   title = 'Projeto-Final-Angular';
 
-  constructor(public petService: PetService, public userService: UserService) { }
+  constructor(public userService: UserService) { }
   
   ngOnInit(): void{
   }
