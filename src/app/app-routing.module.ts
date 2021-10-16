@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'user-login', component: UserLoginComponent },
   { path: 'user-menu', component: UserMenuComponent },
   { path: 'pet-page/:id', component: PetPageComponent },
-  { path: 'adopt-page', component: AdoptPageComponent },
+  { path: 'adopt-page/:id', component: AdoptPageComponent },
   { path: 'pet-menu', component: PetMenuComponent },
   { path: 'report-page/:id', component: ReportPageComponent },
   {path: 'donate' , component: DonateComponent},
