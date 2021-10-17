@@ -25,14 +25,9 @@ export class PhotoUploadService {
 			headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 		}
 		debugger
-		this.http.post(this.BASE_URL + '/create-photo',
-		{	
-			method: 'post',
-			data: photoFile, petId,       
-            headers: {
-                      'Content-Type': 'application/json'
-                      }      
-		  }).subscribe(data => {
+		this.http
+		.post(this.BASE_URL + '/create-photo', formData) 
+		  .subscribe(data => {
 			console.log(data)	
 		});
 	}
