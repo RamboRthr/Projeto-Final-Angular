@@ -1,0 +1,48 @@
+* {
+    overflow-x: hidden;
+}
+
+.jumbotron{
+    background-image: url(../../../assets/home-backgrounds.png);
+    background-size: cover;
+    height: 100%;
+}
+
+.container{
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    overflow-y: hidden;
+}
+
+body {
+    padding-top: 3.5rem;
+    background-color: #6b737a;
+    background-image: url(../../../assets/card-paw.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.petCard{
+    margin-bottom: 5%;
+    margin-right: 5%;
+    margin-left: 5%;
+    padding: 10px;
+    background-color: aliceblue;
+    border-radius: 5%;
+    width: 15%;
+}
+
+.petCard h2{
+    overflow: hidden;
+    color:#e7acab;
+}
+
+.btn-know-more{
+    background-color: #c9315c !important;
+    border-color: #c9315c;
+}
+

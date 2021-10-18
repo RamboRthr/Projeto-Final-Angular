@@ -1,0 +1,39 @@
+body{
+    background-image: url(../../../assets/card-paw.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #bdcbee;
+    padding-bottom: 4%;
+}
+
+.container{
+    margin-top: 80px;
+    width: 45%;
+    border-style: groove;
+    border-radius: 5%;
+    padding-bottom: 10px;
+    background-color: #bdcbee;
+    background-size: cover;
+    color: black; 
+
+}
+
+h1 {
+    text-align: center;
+}
+
+.mb-3{
+    padding-left: 6%;
+    padding-right: 3%;
+}
+#rua{
+    margin-left: 10%;
+}
+
+#bairro{
+    margin-top: 10px;
+}
+button{
+    margin-top: 10px;
+    margin-left: 39px;
+}

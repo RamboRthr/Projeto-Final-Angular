@@ -1,7 +1,4 @@
 import { UserService } from './services/user.service';
-import { User } from './domain/user';
-import { PetService } from './services/pet.service';
-import { Pet } from './domain/pet';
 import { Component } from '@angular/core';
 
 @Component({
@@ -11,14 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Projeto-Final-Angular';
-  user: User[] = [];
-  pet: Pet[] = [];
 
-  loggedUsers: User[] = [];
+  constructor(public userService: UserService) { }
 
-  constructor(private userServise: UserService, private petServise: PetService) {}
-  
-  ngOnInit(): void{
-    this.userServise.getAllUsers
+  onSubmit(form: any) {
+    this.userService.logOut();
   }
 }

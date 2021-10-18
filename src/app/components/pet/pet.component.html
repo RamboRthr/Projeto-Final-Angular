@@ -1,0 +1,151 @@
+<body *ngIf="this.userService.goToLogin()">
+
+  <section class="container">
+
+    <h1 class="title" style="padding: 30px; text-align: center">Cadastro do Pet</h1>
+
+    <form class="row g-3 align-items-center" novalidate #form="ngForm" (submit)="onSubmit(form, template)">
+
+      <div class="col-md-6">
+        <label>Nome</label>
+        <input 
+        required 
+        type="text"
+        name="nome" 
+        minlength="2" 
+        maxlength="60" 
+        #nome="ngModel" 
+        class="form-control" 
+        placeholder="Digite o nome do pet"
+        [(ngModel)]="this.petService.petRequestModel.name" 
+        [class.invalid]="nome.invalid && nome.touched"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <label>Animal</label>
+        <input 
+        required 
+        type="text"
+        name="animal" 
+        minlength="1" 
+        maxlength="60" 
+        #animal="ngModel" 
+        class="form-control" 
+        placeholder="Ex: cachorro"
+        [(ngModel)]="this.petService.petRequestModel.specie" 
+        [class.invalid]="animal.invalid && animal.touched"
+        />
+      </div>
+
+      <div class="col-md-6">
+        <label>Raça</label>
+        <input 
+        name="raca" 
+        type="text"
+        minlength="2" 
+        maxlength="60" 
+        #raca="ngModel" 
+        class="form-control" 
+        placeholder="Ex: vira-lata" 
+        [(ngModel)]="this.petService.petRequestModel.breed"
+        />
+      </div>
+      
+      <div class="col-md-6" style="padding-top: 10px">
+        <label>Idade (anos / meses)</label>
+        <input 
+        required
+        name="anos" 
+        type="text" 
+        minlength="1" 
+        maxlength="2" 
+        #anos="ngModel"  
+        style="width: 50%" 
+        class="form-control" 
+        [(ngModel)]="this.petService.petRequestModel.ageYears" 
+        [class.invalid]="anos.invalid && anos.touched" 
+        />
+        <input 
+        required 
+        name="meses" 
+        type="text" 
+        minlength="1" 
+        maxlength="2" 
+        #meses="ngModel"
+        style="width: 50%" 
+        class="form-control" 
+        [(ngModel)]="this.petService.petRequestModel.ageMonths"
+        [class.invalid]="meses.invalid && meses.touched" 
+        />
+      </div>
+
+      <div class="col-6">
+        <label>Porte</label>
+        <select 
+        name="porte" 
+        type="list"
+        #porte="ngModel"
+        class="form-select" 
+        [(ngModel)]="this.petService.petRequestModel.size" 
+        >
+          <option selected value="1">Pequeno</option>
+          <option value="2">Médio</option>
+          <option value="3">Grande</option>
+        </select>
+      </div>
+
+      <div class="col-md-6" style="padding-top: 10px">
+        <label>Foto</label>
+        <input 
+        name="foto" 
+        type="file" 
+        id="file" 
+        (change)="handleFileInput($event)"
+        />
+      </div>
+
+      <div class="col-12">
+        <label>Descrição</label>
+        <textarea 
+        name="description"
+        type="text"
+        rows="3" 
+        id="exampleFormControlTextarea1" 
+        #description="ngModel"
+        class="form-control" 
+        [(ngModel)]="this.petService.petRequestModel.description" 
+        >
+      </textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+        Salvar
+      </button>
+      
+      <ng-template #template >
+
+        <div class="modal-header">
+        
+          <h4 class="modal-title"style="text-align: center">CADASTRO REALIZADO</h4>
+          
+        </div>
+        <div class="modal-btn">
+          <button 
+            type="button" 
+            routerLink="/"
+            aria-label="Close" 
+            (click)="modalRef?.hide()"
+            class="btn-close close" 
+            >
+            <button type="button" class="btn btn-secondary" style="background-color: red;color: black;" data-bs-dismiss="modal">Close</button>
+          </button>
+        </div>
+      
+      </ng-template>
+
+    </form>
+
+  </section>
+
+</body>

@@ -1,14 +1,15 @@
-import { ReportPageComponent } from './report-page/report-page.component';
-import { AdoptPageComponent } from './adopt-page/adopt-page.component';
-import { UserLoginComponent } from './user-login/user-login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
-import { PetComponent } from './pet/pet.component';
-import { UserMenuComponent } from './user-menu/user-menu.component';
-import { PetPageComponent } from './pet-page/pet-page.component';
-import { PetMenuComponent } from './pet-menu/pet-menu.component';
+import { HomeComponent } from './components/home/home.component';
+import { DonateComponent } from './components/donate/donate.component';
+import { UserComponent } from './components/user/user.component';
+import { PetComponent } from './components/pet/pet.component';
+import { ReportPageComponent } from './components/report-page/report-page.component';
+import { PetMenuComponent } from './components/pet-menu/pet-menu.component';
+import { AdoptPageComponent } from './components/adopt-page/adopt-page.component';
+import { PetPageComponent } from './components/pet-page/pet-page.component';
+import { UserMenuComponent } from './components/user-menu/user-menu.component';
+import { UserLoginComponent } from './components/user-login/user-login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,9 +18,10 @@ const routes: Routes = [
   { path: 'user-login', component: UserLoginComponent },
   { path: 'user-menu', component: UserMenuComponent },
   { path: 'pet-page/:id', component: PetPageComponent },
-  { path: 'adopt-page', component: AdoptPageComponent },
+  { path: 'adopt-page/:id', component: AdoptPageComponent },
   { path: 'pet-menu', component: PetMenuComponent },
-  { path: 'report-page/:id', component: ReportPageComponent }
+  { path: 'report-page/:id', component: ReportPageComponent },
+  {path: 'donate' , component: DonateComponent},
 ];
 
 @NgModule({

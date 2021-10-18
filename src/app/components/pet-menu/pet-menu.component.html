@@ -1,0 +1,24 @@
+<body *ngIf="this.userService.goToLogin()">
+  <div style="height: 100px;"></div>
+  <div class="container">
+      <div *ngFor="let pet of this.petService.listOfPetResponseModels">
+          <div class="row">
+              <img src="../../../assets/cachorro.jfif" alt="photoPet" class="col-4">
+              <div class="col-8">
+                  <p style="width: 700px;"><strong>{{pet.name}}</strong></p>
+                  <p style="width: 700px;">Animal: {{pet.specie}}</p>
+                  <p style="width: 700px;">Raça: {{pet.breed}}</p>
+                  <p style="width: 700px;">Descrição: {{pet.description}}</p>
+                  <button type="button" class="btn btn-danger" (click)="openModal(template)">Excluir</button>
+                  <ng-template #template>
+                      <div class="modal-body text-center">
+                          <p>Excluir o cadastro desse pet?</p>
+                          <button type="button" class="btn btn-default" (click)="confirm(pet)">Yes</button>
+                          <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+                      </div>
+                  </ng-template>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>

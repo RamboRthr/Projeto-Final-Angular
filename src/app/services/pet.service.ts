@@ -1,49 +1,54 @@
-import { Pet } from './../domain/pet';
+import { Pet } from './../domain/entities/pet';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { PetResponseModel } from '../domain/models/petModels/petResponseModel';
+import { PetRequestModel } from '../domain/models/petModels/petRequestModel';
+import { PetUpdateRequestModel } from '../domain/models/petModels/petUpdateRequestModel';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class PetService {
 
-  BASE_URL = "https://localhost:44356/api/Pets"
+  BASE_URL = "https://localhost:5001/pet"
+
   constructor (private httpClient: HttpClient) { }
 
-  public list: Pet[] =  [];
-  public formData: Pet = new Pet()
-  public isNew : boolean = false;
+  public listOfPetResponseModels: PetResponseModel[] =  [];
+  public petRequestModel: PetRequestModel = new PetRequestModel();
+  public petResponseModel: PetResponseModel = new PetResponseModel();
+  public petUpdateRequestModel: PetUpdateRequestModel = new PetUpdateRequestModel();
+  public pet: Pet = new Pet();
 
   getAllPets(){
-    this.httpClient.get<any>(this.BASE_URL ).subscribe((data) =>{
-      console.log(data);
-      this.list = data.$values as Pet[];
+    this.httpClient.get<PetResponseModel[]>(this.BASE_URL + `/get-all-pets`).subscribe((data) =>{
+      this.listOfPetResponseModels = data;
     });
   }
 
-  getPet(id: number)
-  {
-    return this.httpClient.get<Pet>(this.BASE_URL+ `/${id}`).subscribe((data) =>
-    {
-      this.formData = data;
+  getPetsByUserId(userId: number){
+    this.httpClient.get<PetResponseModel[]>(this.BASE_URL+`/get-pets-by-${userId}`).subscribe((data) =>{
+    this.listOfPetResponseModels = data;
     })
   }
 
+  getPetById(petId: number)
+  {
+    return this.httpClient.get<PetResponseModel>(this.BASE_URL+ `/get-pet-by-${petId}`).subscribe((data) =>
+    {
+      this.petResponseModel = data;
+    })
+  }
+  
   postPet(){
-    return this.httpClient.post(this.BASE_URL, this.formData).subscribe( () => {
+    return this.httpClient.post(this.BASE_URL+ `/create-pet`, this.petRequestModel).subscribe( () => {
       this.getAllPets();
     });
-  }
-
-  updatePet(pet: Pet){
-    return this.httpClient.put<Pet>(this.BASE_URL+ `/${pet.id}`, pet).subscribe( () => {
-      this.getAllPets();
-    }); 
   }
 
   deletePet(pet:Pet){
-    return this.httpClient.delete<Pet>(this.BASE_URL+ `/${pet.id}`).subscribe( () => {
-      this.getAllPets();
-    })
+    return this.httpClient.delete(this.BASE_URL+ `/delete-pet-by-${pet.id}`)
   }
+
 }

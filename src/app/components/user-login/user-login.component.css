@@ -1,0 +1,75 @@
+body{
+  padding-top: 8.25%;
+  padding-bottom: 4.25%;
+  background-image: url(../../../assets/card-paw.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.container{
+  width: 500px;
+  margin-left: 32%;
+  margin-right: 25%;
+  border-style: groove;
+  border-color:white;
+  border-radius: 5%;
+  display: inline-block;
+  background-image: url(../../../assets/CardsPetRegistrationBackgroundPhotoo.png);
+  background-size: cover;
+  height: 100%;
+  color: black;
+}
+
+.form-signin { 
+  padding-top: 0.8%;
+  width: 90%;
+  max-width: 490px;
+  margin: auto;
+}
+
+.checkbox{
+  padding-top: 7%;
+  padding-bottom: 7%;
+}
+.btn-primary{
+  background-color:#c9315c;
+  border-color: #c9315c; 
+}
+
+.form-floating{
+  padding-top: 2%;
+}
+.form-floating2{
+  padding-top: 7%;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin label[for="floatingInput"]{
+  margin-right: 100%;
+  
+}
+
+.form-signin label[for="floatingPassword"]{
+  margin-right: 100%;
+
+}
+
+form{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-style: groove;
+}
