@@ -28,6 +28,7 @@ export class PetComponent implements OnInit {
 
   onSubmit(form: any, template: TemplateRef<any>) {
     this.postPet();
+    this.uploadFileToActivity()
     this.modalRef = this.modalService.show(template);
   }
 
@@ -35,16 +36,16 @@ export class PetComponent implements OnInit {
     this.petService.postPet();
   }
 
-  // handleFileInput(event: Event) {
-  //   const element = event.currentTarget as HTMLInputElement;
-  //   let files: FileList | null = element.files;
-  //   this.photoToUpload.PhotoPath = files?.item(0)?.name as string;
-  //   this.photoToUpload.PhotoContent = files?.item(0) as File;
-  //   this.petService.formData.photos.push(this.photoToUpload)
-  //   debugger
-  // }
+   handleFileInput(event: Event) {
+     const element = event.currentTarget as HTMLInputElement;
+     let files: FileList | null = element.files;
+     this.photoToUpload.PhotoPath = files?.item(0)?.name as string;
+     this.photoToUpload.PhotoContent = files?.item(0) as File;
+     
+     debugger
+   }
 
   uploadFileToActivity() {
-    this.photoUploadService.postFile(this.photoToUpload);
+    this.photoUploadService.postFile(1, this.photoToUpload.PhotoContent);
   }
 }

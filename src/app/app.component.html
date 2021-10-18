@@ -14,11 +14,11 @@
             <a class="nav-link" routerLink="/pet-sign-up">Cadastrar pet</a>
           </li>
           <li class="nav-item navbar-right">
-            <a class="nav-link">Doar</a>
+            <a class="nav-link" [routerLink]="['/donate/']">PIX Solidário</a>
           </li>
         </ul>
       </div>
-      
+ 
       <ul class="navbar-nav mr-auto navbar-right" >
         <li *ngIf="!this.userService.isUserAuthenticated()" class="nav-item navbar-right">
           <a class="nav-link" routerLink="/user-login">Entrar</a>
@@ -26,7 +26,6 @@
         <li *ngIf="!this.userService.isUserAuthenticated()" class="nav-item">
           <a class="nav-link" routerLink="/user-sign-up">Cadastre-se</a>
         </li>
-
         <div *ngIf="this.userService.isUserAuthenticated()" class="btn-group" dropdown style="margin-right: 10px;">
           <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
                   aria-controls="dropdown-animated">
@@ -42,7 +41,6 @@
       </ul>
     </nav>
   </form>
-
 <footer class="containerFooter">
   <p>&copy; Get Pet 2021</p>
 </footer>
