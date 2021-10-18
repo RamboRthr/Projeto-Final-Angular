@@ -10,13 +10,26 @@
                     <p>Raça: {{pet.breed}}</p>
                     <p style="width: 200px;">Descrição: {{pet.description}}</p>
                     <button type="button" class="btn btn-danger" (click)="openModal(template)">Excluir</button>
-                    <ng-template #template>
-                        <div class="modal-body text-center">
-                            <p>Excluir o cadastro desse pet?</p>
-                            <button type="button" class="btn btn-default" (click)="confirm(pet)">Yes</button>
-                            <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+                    <ng-template #template >
+
+                        <div class="modal-header">
+                        
+                          <h4 class="modal-title"style="text-align: center">CONFIRMAR EXLCUSÃO DO PET?</h4>
+                          
                         </div>
-                    </ng-template>
+                        <div class="modal-btn">
+                          <button 
+                            type="button" 
+                            routerLink="../pet-menu"
+                            aria-label="Close" 
+                            (click)="modalRef?.hide()"
+                            class="btn-close close" 
+                            >
+                            <button type="button" class="btn btn-default" (click)="confirm(pet)">Yes</button>
+                          </button>
+                        </div>
+                      
+                      </ng-template>
                 </div>
             </div>
         </div>
