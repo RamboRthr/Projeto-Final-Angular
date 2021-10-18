@@ -13,7 +13,6 @@ body{
   width: 500px;
   margin-left: 32%;
   margin-right: 25%;
-  border-style: groove;
   border-color:white;
   border-radius: 5%;
   display: inline-block;
@@ -21,6 +20,7 @@ body{
   background-size: cover;
   height: 100%;
   color: black;
+  padding-top: 20px;
 }
 
 .form-signin { 
@@ -37,6 +37,9 @@ body{
 .btn-primary{
   background-color:#c9315c;
   border-color: #c9315c; 
+  margin-left: 37%;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .form-floating{
@@ -71,5 +74,4 @@ body{
 form{
   margin-top: 10px;
   margin-bottom: 10px;
-  border-style: groove;
 }
