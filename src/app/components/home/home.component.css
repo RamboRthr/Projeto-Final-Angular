@@ -3,7 +3,7 @@
 }
 
 .jumbotron{
-    background-image: url(../../assets/home-backgrounds.png);
+    background-image: url(../../../assets/home-backgrounds.png);
     background-size: cover;
     height: 100%;
 }
@@ -18,7 +18,7 @@
 body {
     padding-top: 3.5rem;
     background-color: #6b737a;
-    background-image: url(../../assets/card-paw.png);
+    background-image: url(../../../assets/card-paw.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;

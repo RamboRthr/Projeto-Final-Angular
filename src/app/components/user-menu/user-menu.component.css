@@ -3,18 +3,15 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #bdcbee;
-    padding-bottom: 1%;
-    padding-top: 0.01%;
+    padding-bottom: 4%;
 }
 
 .container{
-    margin-top: 100px;
-    width: 40%;
+    margin-top: 80px;
+    width: 45%;
     border-style: groove;
     border-radius: 5%;
-    padding-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px; 
+    padding-bottom: 10px;
     background-color: #bdcbee;
     background-size: cover;
     color: black; 
@@ -22,7 +19,6 @@ body{
 }
 
 h1 {
-    margin-top: 10%;
     text-align: center;
 }
 
@@ -39,5 +35,5 @@ h1 {
 }
 button{
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 39px;
 }

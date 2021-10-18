@@ -1,10 +1,9 @@
 body{
   padding-top: 8.25%;
   padding-bottom: 4.25%;
-  background-color: #6b737a;
-  background-image: url(../../assets/card-paw.png);
+  background-image: url(../../../assets/card-paw.png);
   background-repeat: no-repeat;
-  background-size: unset;
+  background-size: cover;
   display: flex;
   align-items: center;
   height: 100%;
@@ -18,14 +17,14 @@ body{
   border-color:white;
   border-radius: 5%;
   display: inline-block;
-  background-image: url(../../assets/CardsPetRegistrationBackgroundPhotoo.png);
+  background-image: url(../../../assets/CardsPetRegistrationBackgroundPhotoo.png);
   background-size: cover;
   height: 100%;
   color: black;
 }
 
-.form-signin {
-  padding-top: 1%;
+.form-signin { 
+  padding-top: 0.8%;
   width: 90%;
   max-width: 490px;
   margin: auto;
@@ -40,32 +39,11 @@ body{
   border-color: #c9315c; 
 }
 
-.bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-}
-
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-  }
-
-.form-signin .checkbox {
-  font-weight: 400;
-}
-
 .form-floating{
   padding-top: 2%;
 }
 .form-floating2{
   padding-top: 7%;
-}
-.form-signin .form-floating:focus-within {
-  z-index: 2;
 }
 
 .form-signin input[type="email"] {
@@ -91,6 +69,7 @@ body{
 }
 
 form{
-  margin-top: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-style: groove;
 }

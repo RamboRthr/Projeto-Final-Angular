@@ -1,5 +1,5 @@
 body{
-    background-image: url(../../assets/-paw.png);
+    background-image: url(../../../assets/-paw.png);
     padding-top: 8.05%;
     padding-bottom: 8.05%;
     background-size: cover;
@@ -7,7 +7,7 @@ body{
 }
 
 .container{
-    background-image: url(../../assets/CardsPetRegistrationBackgroundPhotoo.png);
+    background-image: url(../../../assets/CardsPetRegistrationBackgroundPhotoo.png);
     margin-top: 70px;
     width: 500px;
     margin-left: 30%;

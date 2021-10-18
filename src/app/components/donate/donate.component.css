@@ -7,7 +7,7 @@ body{
 }
 
 .jumbotron{
-    background-image: url(../../assets/donate-card-background.jpg);
+    background-image: url(../../../assets/donate-card-background.jpg);
     background-size: cover;
     height: 100%;
 }
@@ -28,7 +28,7 @@ body{
 } 
 
 .image{
-    background: url(../../assets/qrcode.jpg);
+    background: url(../../../assets/qrcode.jpg);
     position: absolute;
     z-index: 2;
     height: 70%;

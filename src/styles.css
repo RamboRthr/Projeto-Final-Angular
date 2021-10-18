@@ -1,4 +1,6 @@
-
+html{
+    background-image:url(assets/card-paw.png); ;
+}
 .invalid {
     color: red
 }

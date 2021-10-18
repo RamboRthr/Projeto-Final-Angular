@@ -1,6 +1,6 @@
 
 body{
-    background-image: url(../../assets/card-paw.png);
+    background-image: url(../../../../assets/card-paw.png);
     padding: 4.7%;
     background-size: cover;
     height: 100%;
@@ -17,7 +17,7 @@ body{
     padding-bottom: 30px;
     padding-left: 20px;
     padding-right: 20px; 
-    background-image: url(../../assets/CardsPetRegistrationBackgroundPhotoo.png);
+    background-image: url(../../../assets/CardsPetRegistrationBackgroundPhotoo.png);
     background-size: cover;
     height: 100%;
     color: black;  
