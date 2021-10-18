@@ -1,37 +1,24 @@
-<body>
-    <div style="height: 100px;"></div>
-    <div class="container">
-        <div *ngFor="let pet of this.petService.listOfPetResponseModels">
-            <div class="row">
-                <img src="../../assets/cachorro.jfif" class="col-4">
-                <div class="col-8">
-                    <p><strong>{{pet.name}}</strong></p>
-                    <p>Animal: {{pet.specie}}</p>
-                    <p>Raça: {{pet.breed}}</p>
-                    <p style="width: 200px;">Descrição: {{pet.description}}</p>
-                    <button type="button" class="btn btn-danger" (click)="openModal(template)">Excluir</button>
-                    <ng-template #template >
-
-                        <div class="modal-header">
-                        
-                          <h4 class="modal-title"style="text-align: center">CONFIRMAR EXLCUSÃO DO PET?</h4>
-                          
-                        </div>
-                        <div class="modal-btn">
-                          <button 
-                            type="button" 
-                            routerLink="../pet-menu"
-                            aria-label="Close" 
-                            (click)="modalRef?.hide()"
-                            class="btn-close close" 
-                            >
-                            <button type="button" class="btn btn-default" (click)="confirm(pet)">Yes</button>
-                          </button>
-                        </div>
-                      
-                      </ng-template>
-                </div>
-            </div>
-        </div>
-    </div>
+<body *ngIf="this.userService.goToLogin()">
+  <div style="height: 100px;"></div>
+  <div class="container">
+      <div *ngFor="let pet of this.petService.listOfPetResponseModels">
+          <div class="row">
+              <img src="../../assets/cachorro.jfif" class="col-4">
+              <div class="col-8">
+                  <p><strong>{{pet.name}}</strong></p>
+                  <p>Animal: {{pet.specie}}</p>
+                  <p>Raça: {{pet.breed}}</p>
+                  <p style="width: 200px;">Descrição: {{pet.description}}</p>
+                  <button type="button" class="btn btn-danger" (click)="openModal(template)">Excluir</button>
+                  <ng-template #template>
+                      <div class="modal-body text-center">
+                          <p>Excluir o cadastro desse pet?</p>
+                          <button type="button" class="btn btn-default" (click)="confirm(pet)">Yes</button>
+                          <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+                      </div>
+                  </ng-template>
+              </div>
+          </div>
+      </div>
+  </div>
 </body>

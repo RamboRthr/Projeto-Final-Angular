@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { PetService } from '../services/pet.service';
 import { ActivatedRoute } from '@angular/router';
 import { Pet } from '../domain/entities/pet';
-import { UserResponseModel } from '../domain/models/userModels/userResponseModel';
 
 @Component({
   selector: 'app-pet-page',

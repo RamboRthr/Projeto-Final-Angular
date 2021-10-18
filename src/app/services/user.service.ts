@@ -49,7 +49,7 @@ export class UserService {
 
   isUserAuthenticated() {
     const token = localStorage.getItem("jwtToken");
-    if (token == 'null'){
+    if (token == 'null' || this.jwtHelper.isTokenExpired(token?.toString())){
       return false;
     }
     else (token && !this.jwtHelper.isTokenExpired(token)); {
@@ -63,13 +63,11 @@ export class UserService {
   }
 
   goToLogin() {
-    const token = localStorage.getItem("jwtToken");
-    if (token == 'null'){
-      return this.router.navigate(['/user-login']);
-
-    }
-    else (token && !this.jwtHelper.isTokenExpired(token)); {
+    if ( this.isUserAuthenticated()){
       return true;
+    }
+    else{
+      return this.router.navigate(['/user-login']);
     }
   }
 

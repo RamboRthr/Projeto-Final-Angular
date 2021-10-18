@@ -1,4 +1,4 @@
-<body>
+<body *ngIf="this.userService.goToLogin()">
   <section class="container">
     <h1>Editar Cadastro</h1>
     <form class="row g-3 container_form" novalidate #form="ngForm" (submit)="onSubmit(form, template)" style="margin-top: 50px;">

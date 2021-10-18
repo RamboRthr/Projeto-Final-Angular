@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserMenuComponent } from './user-menu/user-menu.component';
-import { DemoDropdownAnimatedComponent } from './btn-dropdown/btn-dropdown.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PetPageComponent } from './pet-page/pet-page.component';
 import { AdoptPageComponent } from './adopt-page/adopt-page.component';
@@ -22,7 +21,6 @@ import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AuthGuard } from './guards/auth-guard.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DonateComponent } from './donate/donate.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwtToken");
@@ -36,12 +34,10 @@ export function tokenGetter() {
     HomeComponent,
     UserLoginComponent,
     UserMenuComponent,
-    DemoDropdownAnimatedComponent,
     PetPageComponent,
     AdoptPageComponent,
     ReportPageComponent,
     PetMenuComponent,
-    DonateComponent,
     
   ],
   imports: [

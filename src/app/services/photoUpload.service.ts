@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Photo } from '../domain/entities/photo';
 import { PhotoRequestModel } from '../domain/models/photoModels/photoRequestModel';
 
 @Injectable({ providedIn: 'root' })
@@ -26,9 +25,9 @@ export class PhotoUploadService {
 		}
 		debugger
 		this.http
-		.post(this.BASE_URL + '/create-photo', formData) 
-		  .subscribe(data => {
-			console.log(data)	
-		});
+			.post(this.BASE_URL + '/create-photo', formData)
+			.subscribe(data => {
+				console.log(data)
+			});
 	}
 }

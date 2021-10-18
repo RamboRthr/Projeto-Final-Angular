@@ -20,4 +20,9 @@ export class LoginService {
             console.log(data);
         })
     }
+    loginAfterRegistration(email: string, password: string){ 
+        this.formData.email = email;
+        this.formData.password = password;
+        this.login();
+    }
 }

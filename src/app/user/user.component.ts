@@ -1,6 +1,7 @@
 import { UserService } from '../services/user.service';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-user',
@@ -10,7 +11,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 export class UserComponent implements OnInit {
 
-  constructor(public userService: UserService, private modalService: BsModalService) { }
+  constructor(public userService: UserService, private modalService: BsModalService, private loginServe: LoginService) { }
 
   modalRef?: BsModalRef;
 
@@ -23,6 +24,7 @@ export class UserComponent implements OnInit {
 
   postUser(){
     this.userService.postUser();
+    this.loginServe.loginAfterRegistration(this.userService.userRequestModel.email,this.userService.userRequestModel.password);
   }
 }
 

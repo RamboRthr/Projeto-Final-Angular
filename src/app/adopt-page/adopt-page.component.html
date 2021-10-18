@@ -1,1 +1,24 @@
-<p>adopt-page works!</p>
+<body>
+    <div style="height: 100px;"></div>
+    <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <p><strong>Exemplo: Lucas</strong></p>
+                    <p>Telefone: (47) 99229-5076</p>
+                    <p>Email: lucas@gmail.com</p>
+                    <p>Bairo: Esse ai mesmo</p>
+                </div>
+            </div>
+        <div *ngFor="let pet of this.petService.listOfPetResponseModels">
+            <div class="row">
+                <img src="../../assets/cachorro.jfif" class="col-4">
+                <div class="col-8">
+                    <p><strong>{{pet.name}}</strong></p>
+                    <p>Animal: {{pet.specie}}</p>
+                    <p>Raça: {{pet.breed}}</p>
+                    <p style="width: 200px;">Descrição: {{pet.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>

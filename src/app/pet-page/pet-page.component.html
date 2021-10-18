@@ -1,6 +1,6 @@
 <body *ngIf="this.userService.goToLogin()">
-    <main>
-        <div class="row">
+    <main *ngIf="this.userService.goToLogin()">
+        <div class="row" *ngIf="this.userService.goToLogin()">
             <div class="photo">
                 <img src="../assets/cachorro.jfif" alt="photo" style="border-radius: 5%;">
             </div>
@@ -19,11 +19,11 @@
                     <div>
                         <div>
                             <div class="divAdotar">
-                                <a type="button" class="btn btn-primary" [routerLink]="['/adopt-page/', this.pet.userId]">Adotar</a>
+                                <a type="button" class="btn btn-primary" [routerLink]="['/adopt-page', this.pet.userId]">Adotar</a>
                             </div>
                             <div class="divReportar">
                                 <a type="button" class="btn btn-danger"
-                                    [routerLink]="['/report-page/', this.petService.pet.id]">Reportar</a>
+                                    [routerLink]="['/report-page', this.petService.pet.id]">Reportar</a>
                             </div>
                             <div class="divVoltar">
                                 <a type="button" class="btn btn-primary"
