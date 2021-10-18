@@ -6,7 +6,7 @@ html{
 }
 .menu {
     background:silver;
-    font-family:"Comic Sans MS";
+    font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
     float: left;
     width: 30%;
 }

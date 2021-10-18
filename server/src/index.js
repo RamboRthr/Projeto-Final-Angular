@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors'); 5.2 (gzipped = 2.1)
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const multipart = require('connect-multiparty');
 

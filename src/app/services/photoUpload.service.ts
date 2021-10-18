@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { PhotoRequestModel } from '../domain/models/photoModels/photoRequestModel';
 
 @Injectable({ providedIn: 'root' })
