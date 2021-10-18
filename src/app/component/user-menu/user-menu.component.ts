@@ -1,6 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { UserService } from '../services/user.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { UserService } from 'src/app/services/user.service';
 
 
 @Component({

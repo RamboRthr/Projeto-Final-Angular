@@ -1,9 +1,9 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { PetService } from '../services/pet.service';
-import { UserService } from '../services/user.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { User } from '../domain/entities/user';
-import { Pet } from '../domain/entities/pet';
+import { Pet } from 'src/app/domain/entities/pet';
+import { User } from 'src/app/domain/entities/user';
+import { PetService } from 'src/app/services/pet.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-pet-menu',

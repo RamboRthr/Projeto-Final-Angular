@@ -1,8 +1,8 @@
-import { UserService } from './../services/user.service';
 import { Component, OnInit } from '@angular/core';
-import { PetService } from '../services/pet.service';
 import { ActivatedRoute } from '@angular/router';
-import { Pet } from '../domain/entities/pet';
+import { Pet } from 'src/app/domain/entities/pet';
+import { PetService } from 'src/app/services/pet.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-pet-page',

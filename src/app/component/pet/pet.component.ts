@@ -1,9 +1,9 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
-import { PetService } from '../services/pet.service';
-import { PhotoUploadService } from '../services/photoUpload.service';
-import { UserService } from '../services/user.service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { Photo } from '../domain/entities/photo';
+import { Photo } from 'src/app/domain/entities/photo';
+import { PetService } from 'src/app/services/pet.service';
+import { PhotoUploadService } from 'src/app/services/photoUpload.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-pet',

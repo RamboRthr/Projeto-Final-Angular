@@ -1,15 +1,15 @@
-import { ReportPageComponent } from './report-page/report-page.component';
-import { AdoptPageComponent } from './adopt-page/adopt-page.component';
-import { UserLoginComponent } from './user-login/user-login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
-import { PetComponent } from './pet/pet.component';
-import { UserMenuComponent } from './user-menu/user-menu.component';
-import { PetPageComponent } from './pet-page/pet-page.component';
-import { PetMenuComponent } from './pet-menu/pet-menu.component';
-import { DonateComponent } from './donate/donate.component';
+import { HomeComponent } from './component/home/home.component';
+import { DonateComponent } from './component/donate/donate.component';
+import { UserComponent } from './component/user/user.component';
+import { PetComponent } from './component/pet/pet.component';
+import { ReportPageComponent } from './component/report-page/report-page.component';
+import { PetMenuComponent } from './component/pet-menu/pet-menu.component';
+import { AdoptPageComponent } from './component/adopt-page/adopt-page.component';
+import { PetPageComponent } from './component/pet-page/pet-page.component';
+import { UserMenuComponent } from './component/user-menu/user-menu.component';
+import { UserLoginComponent } from './component/user-login/user-login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },

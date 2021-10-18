@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Pet } from '../domain/entities/pet';
-import { User } from '../domain/entities/user';
-import { PetService } from '../services/pet.service';
-import { UserService } from '../services/user.service';
+import { Pet } from '../../domain/entities/pet';
+import { User } from '../../domain/entities/user';
+import { PetService } from '../../services/pet.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-adopt-page',

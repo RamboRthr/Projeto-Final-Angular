@@ -1,7 +1,7 @@
 import { Component, TemplateRef} from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { LoginService } from '../services/login.service';
-import { UserService } from '../services/user.service';
+import { LoginService } from 'src/app/services/login.service';
+import { UserService } from 'src/app/services/user.service';
    
 @Component({
   selector: 'app-user-login',
