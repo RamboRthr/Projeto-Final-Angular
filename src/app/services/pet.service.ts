@@ -47,12 +47,8 @@ export class PetService {
     });
   }
 
-  updatePet(petUpdateRequestModel: PetUpdateRequestModel){
-    return this.httpClient.put(this.BASE_URL+ `/update-pet`, petUpdateRequestModel).subscribe( () => {}); 
-  }
-
   deletePet(pet:Pet){
-    return this.httpClient.delete(this.BASE_URL+ `/delete-pet-by-${pet.id}`).subscribe( () => {})
+    return this.httpClient.delete(this.BASE_URL+ `/delete-pet-by-${pet.id}`)
   }
 
 }

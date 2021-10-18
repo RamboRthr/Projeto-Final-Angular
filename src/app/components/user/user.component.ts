@@ -9,14 +9,12 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user.component.css']
 })
 
-export class UserComponent implements OnInit {
+export class UserComponent {
 
   constructor(public userService: UserService, private modalService: BsModalService, private loginServe: LoginService) { }
 
   modalRef?: BsModalRef;
 
-  ngOnInit(): void {}
-  
   onSubmit(form : any, template: TemplateRef<any>){
       this.postUser(); 
       this.modalRef = this.modalService.show(template);

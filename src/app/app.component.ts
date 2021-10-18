@@ -10,9 +10,7 @@ export class AppComponent {
   title = 'Projeto-Final-Angular';
 
   constructor(public userService: UserService) { }
-  
-  ngOnInit(): void{
-  }
+
   onSubmit(form: any) {
     this.userService.logOut();
   }

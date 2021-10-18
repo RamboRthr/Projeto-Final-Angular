@@ -40,21 +40,16 @@ export class UserService {
   }
 
   updateUser(userUpdateRequestModel: UserUpdateRequestModel){
-    return this.httpClient.put(this.BASE_URL+ `/update-user`, userUpdateRequestModel).subscribe( () => {}); 
+    return this.httpClient.put(this.BASE_URL+ `/update-user`, userUpdateRequestModel)
   }
 
-  deleteUser(user: User){
-    return this.httpClient.delete<User>(`/delete-user-by-${user.id}`).subscribe( () => {})
-  }
 
   isUserAuthenticated() {
     const token = localStorage.getItem("jwtToken");
     if (token == 'null' || this.jwtHelper.isTokenExpired(token?.toString())){
       return false;
     }
-    else (token && !this.jwtHelper.isTokenExpired(token)); {
-      return true;
-    }
+    return true;
   }
 
   logOut() {
