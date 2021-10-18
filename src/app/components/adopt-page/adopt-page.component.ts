@@ -15,13 +15,13 @@ export class AdoptPageComponent implements OnInit {
   user: User = new User;
   pet: Pet = new Pet;
 
-  constructor(public userService: UserService, public petService: PetService, private actRoute: ActivatedRoute) { 
-    this.pet.id = this.actRoute.snapshot.params.id;
-  }
-
   ngOnInit(): void {
     this.userService.getUserById(this.pet.userId)
     this.petService.getPetById(this.pet.id)
+  }
+  
+  constructor(public userService: UserService, public petService: PetService, private actRoute: ActivatedRoute) { 
+    this.pet.id = this.actRoute.snapshot.params.id;
   }
 
 }

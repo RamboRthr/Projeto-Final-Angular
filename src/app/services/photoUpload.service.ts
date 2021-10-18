@@ -20,9 +20,6 @@ export class PhotoUploadService {
 		this.photoRequestModel.petId = petId;
 		this.photoRequestModel.photoFile = photoFile;
 
-		const httpOptions = {
-			headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-		}
 		debugger
 		this.http
 			.post(this.BASE_URL + '/create-photo', formData)

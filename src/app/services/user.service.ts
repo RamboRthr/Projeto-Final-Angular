@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../domain/entities/user';
 import { UserRequestModel } from '../domain/models/userModels/userRequestModel';
 import { UserResponseModel } from '../domain/models/userModels/userResponseModel';
 import { UserUpdateRequestModel } from '../domain/models/userModels/userUpdateRequestModel';
