@@ -14,7 +14,7 @@
           <p>Animal: {{pet.specie}}</p>
           <p>Raça: {{pet.breed}}</p>
           <p></p>
-          <p><a class="btn btn-secondary btn-know-more" [routerLink]="['/pet-page']" (click)="this.petService.selectPet(pet)">Saiba mais &raquo;</a></p>
+          <p><a class="btn btn-secondary btn-know-more" [routerLink]="['/pet-page',i]" (click)="this.petService.selectPet(pet)">Saiba mais &raquo;</a></p>
         </div>
       </div>
     </div> 

@@ -1,22 +1,22 @@
 <body>
     <div style="height: 100px;"></div>
     <div class="container">
-            <div class="row" id="userInfos">
-                <div class="col-8">
-                    <p><strong>Nome completo: {{this.petService.petResponseModel.user.name}} {{this.petService.petResponseModel.user.surname}}</strong></p>
+        <div>
+            <div class="row" id="pet-infos">
+                <img [src]="'../../../assets/' + photoIndex + '.jpeg'" alt="photoPet."  class="col-4">
+                <div class="col-4">
+                    <h3>Informações do Pet</h3>
+                    <p>{{this.petService.petResponseModel.name}}</p>
+                    <p>Animal: {{this.petService.petResponseModel.specie}}</p>
+                    <p>Raça: {{this.petService.petResponseModel.breed}}</p>
+                    <p class="col-12" style="width: 80%; word-wrap: break-word;">Descrição: {{this.petService.petResponseModel.description}}</p>
+                </div>
+                <div class="col-4">
+                    <h3>Informações do dono</h3>
+                    <p>Nome completo: {{this.petService.petResponseModel.user.name}} {{this.petService.petResponseModel.user.surname}}</p>
                     <p>Telefone:{{this.petService.petResponseModel.user.phone}}</p>
                     <p>Email: {{this.petService.petResponseModel.user.email}}</p>
                     <p>Bairro: {{this.petService.petResponseModel.user.district}}</p>
-                </div>
-            </div>
-        <div>
-            <div class="row" id="pet-infos">
-                <img src="../../assets/cachorro.jfif" alt="photoPet."  class="col-4">
-                <div class="col-8">
-                    <p><strong>{{this.petService.petResponseModel.name}}</strong></p>
-                    <p>Animal: {{this.petService.petResponseModel.specie}}</p>
-                    <p>Raça: {{this.petService.petResponseModel.breed}}</p>
-                    <p class="col-12">Descrição: {{this.petService.petResponseModel.description}}</p>
                 </div>
             </div>
         </div>

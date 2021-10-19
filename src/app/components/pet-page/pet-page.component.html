@@ -2,7 +2,7 @@
     <main *ngIf="this.userService.goToLogin()">
         <div class="row" *ngIf="this.userService.goToLogin()">
             <div class="photo">
-                <img src="../assets/cachorro.jfif" alt="photo" style="border-radius: 5%;">
+                <img [src]="'../../../assets/' + photoIndex + '.jpeg'" alt="photo" style="border-radius: 5%;">
             </div>
             <div class="col-md-6">
                 <div class="description">
@@ -19,12 +19,12 @@
                     <div>
                         <div>
                             <div class="divAdotar">
-                                <a type="button" class="btn btn-primary" [routerLink]="['/adopt-page']">Adotar</a>
+                                <a type="button" class="btn btn-primary" [routerLink]="['/adopt-page',this.photoIndex]">Adotar</a>
                             </div>
                             <div class="divReportar">
                                 <a type="button" class="btn btn-danger"
                                     [routerLink]="['/report-page']">Reportar</a>
-                            </div>
+                            </div> 
                             <div class="divVoltar">
                                 <a type="button" class="btn btn-primary"
                                 routerLink="/">Voltar</a>
