@@ -2,8 +2,8 @@ import { PhotoResponseModel } from "../photoModels/photoResponseModel";
 import { UserResponseModel } from "../userModels/userResponseModel";
 
 export class PetResponseModel {
-    userResponseModel: UserResponseModel = new UserResponseModel();
-    photoResponseModel: PhotoResponseModel = new PhotoResponseModel();
+    user: UserResponseModel = new UserResponseModel();
+    photo: PhotoResponseModel = new PhotoResponseModel();
     id: number = 0;
     name: string = ""; 
     userId: number = 0;
