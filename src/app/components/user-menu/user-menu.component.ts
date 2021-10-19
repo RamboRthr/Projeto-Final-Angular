@@ -1,5 +1,6 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { User } from 'src/app/domain/entities/user';
 import { UserService } from 'src/app/services/user.service';
 
 
@@ -21,12 +22,30 @@ export class UserMenuComponent implements OnInit {
 
   modalRef?: BsModalRef;
 
-  onSubmit(form: any, template: TemplateRef<any>) {
-    this.update();
-    this.modalRef = this.modalService.show(template);
+  update() {
+    this.userService.updateUser(this.userService.userResponseModel);  
   }
 
-  update() {
-    this.userService.updateUser(this.userService.userResponseModel);
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, { class: 'modal-sm' });
   }
+
+  confirm(userId: number): void {
+    this.deleteUser(userId)
+    this.modalRef?.hide();
+    this.userService.logOut();
+    this.refresh()
+  }
+  
+  decline(): void {
+    this.modalRef?.hide();
+  }
+
+  deleteUser(userId: number) {
+    this.userService.deleteUser(userId);
+  }
+
+  refresh(): void {
+    window.location.reload();
+}
 }

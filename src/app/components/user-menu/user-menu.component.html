@@ -1,7 +1,7 @@
 <body *ngIf="this.userService.goToLogin()">
   <section class="container">
     <h1>Editar Cadastro</h1>
-    <form class="row g-3 container_form" novalidate #form="ngForm" (submit)="onSubmit(form, template)" style="margin-top: 50px;">
+    <form class="row g-3 container_form" novalidate #form="ngForm" style="margin-top: 50px;">
       <div class="mb-3">
         <label>Nome</label>
         <input
@@ -192,31 +192,26 @@
       <button
         type="submit"
         class="btn btn-primary col-3"
+        (click)="update()"
       >
         Salvar
       </button>
 
-      <ng-template #template>
+      <button 
+        type="button" 
+        class="btn btn-danger" 
+        (click)="openModal(template)"
+      >
+        Excluir
+        <ng-template #template>
+          <div class="modal-body text-center">
+              <p>Confirmar exclusão de conta?</p>
+              <button type="button" class="btn btn-default" style="background-color: blue;" (click)="confirm(this.userService.userResponseModel.id)">Yes</button>
+              <button type="button" class="btn btn-primary" style="background-color: red;" (click)="decline()">No</button>
+          </div>
+        </ng-template>
+      </button>
 
-        <div class="modal-header">
-        
-          <h4 class="modal-title"style="text-align: center">INFORMAÇÕES ATUALIZADAS</h4>
-          
-        </div>
-        <div class="modal-btn">
-          <button 
-            type="button" 
-            routerLink="/"
-            aria-label="Close" 
-            (click)="modalRef?.hide()"
-            class="btn-close close" 
-            >
-            <button type="button" class="btn btn-secondary" style="background-color: red;color: black;" data-bs-dismiss="modal">Close</button>
-          </button>
-        </div>
-
-      </ng-template>
-  
     </form>
   </section>
-  </body>
+</body>

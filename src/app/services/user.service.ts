@@ -33,13 +33,18 @@ export class UserService {
   }
 
   postUser(){
-    return this.httpClient.post(this.BASE_URL+`/create-user`, this.userRequestModel).subscribe( () => {
-      this.getAllUsers();
-    });
+    return this.httpClient.post(this.BASE_URL+`/create-user`, this.userRequestModel);
+  }
+
+  deleteUser(userId: number){
+    return this.httpClient.delete(this.BASE_URL+`/delete-user-by-${userId}`).subscribe(() => 
+    this.logOut());
   }
 
   updateUser(userUpdateRequestModel: UserUpdateRequestModel){
-    return this.httpClient.put(this.BASE_URL+ `/update-user`, userUpdateRequestModel)
+    return this.httpClient.put(this.BASE_URL+ `/update-user`, userUpdateRequestModel).subscribe(() =>{ 
+     
+    })
   }
 
 
