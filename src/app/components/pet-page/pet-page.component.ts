@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PetResponseModel } from 'src/app/domain/models/petModels/petResponseModel';
 import { PetService } from 'src/app/services/pet.service';
 import { UserService } from 'src/app/services/user.service';
@@ -10,12 +11,14 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class PetPageComponent implements OnInit{
 
-  constructor(public petService: PetService, public userService: UserService) { 
+  constructor(public petService: PetService, public userService: UserService, private actRoute: ActivatedRoute) { 
   }
   pet: PetResponseModel = new PetResponseModel;
+  photoIndex: number = 0;
 
   ngOnInit(): void {
     this.pet = this.petService.petResponseModel;
+    this.photoIndex = this.actRoute.snapshot.params.index
   }
 
   
