@@ -1,22 +1,22 @@
 <body>
     <div style="height: 100px;"></div>
     <div class="container">
-            <div class="row">
+            <div class="row" id="userInfos">
                 <div class="col-8">
-                    <p><strong>Exemplo: Lucas</strong></p>
-                    <p>Telefone: (47) 99229-5076</p>
-                    <p>Email: lucas@gmail.com</p>
-                    <p>Bairo: Esse ai mesmo</p>
+                    <p><strong>Nome completo: {{this.petService.petResponseModel.user.name}} {{this.petService.petResponseModel.user.surname}}</strong></p>
+                    <p>Telefone:{{this.petService.petResponseModel.user.phone}}</p>
+                    <p>Email: {{this.petService.petResponseModel.user.email}}</p>
+                    <p>Bairro: {{this.petService.petResponseModel.user.district}}</p>
                 </div>
             </div>
-        <div *ngFor="let pet of this.petService.listOfPetResponseModels">
-            <div class="row">
+        <div>
+            <div class="row" id="pet-infos">
                 <img src="../../assets/cachorro.jfif" alt="photoPet."  class="col-4">
                 <div class="col-8">
-                    <p><strong>{{pet.name}}</strong></p>
-                    <p>Animal: {{pet.specie}}</p>
-                    <p>Raça: {{pet.breed}}</p>
-                    <p style="width: 200px;">Descrição: {{pet.description}}</p>
+                    <p><strong>{{this.petService.petResponseModel.name}}</strong></p>
+                    <p>Animal: {{this.petService.petResponseModel.specie}}</p>
+                    <p>Raça: {{this.petService.petResponseModel.breed}}</p>
+                    <p class="col-12">Descrição: {{this.petService.petResponseModel.description}}</p>
                 </div>
             </div>
         </div>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Pet } from 'src/app/domain/entities/pet';
+import { PetResponseModel } from 'src/app/domain/models/petModels/petResponseModel';
 import { PetService } from 'src/app/services/pet.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -9,15 +8,16 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './pet-page.component.html',
   styleUrls: ['./pet-page.component.css']
 })
-export class PetPageComponent implements OnInit {
+export class PetPageComponent implements OnInit{
 
-  pet: Pet = new Pet;
-
-  constructor(public petService: PetService, public userService: UserService, private actRoute: ActivatedRoute) { 
-    this.pet.id = this.actRoute.snapshot.params.id;
+  constructor(public petService: PetService, public userService: UserService) { 
   }
+  pet: PetResponseModel = new PetResponseModel;
 
   ngOnInit(): void {
-    this.petService.getPetById(this.pet.id);
+    this.pet = this.petService.petResponseModel;
   }
+
+  
+
 }

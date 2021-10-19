@@ -1,7 +1,7 @@
 <body *ngIf="this.userService.goToLogin()">
-  <div style="height: 100px;"></div>
+  <div class="espacamento" style="height: 100px;"></div>
   <div class="container">
-      <div *ngFor="let pet of this.petService.listOfPetResponseModels">
+      <div *ngFor="let pet of this.petService.petResponseModelList">
           <div class="row">
               <img src="../../../assets/cachorro.jfif" alt="photoPet" class="col-4">
               <div class="col-8">
@@ -21,4 +21,5 @@
           </div>
       </div>
   </div>
+  <div class="espacamento" style="height: 100px;"></div>
 </body>

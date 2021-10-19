@@ -15,7 +15,7 @@ export class PetService {
 
   constructor (private httpClient: HttpClient) { }
 
-  public listOfPetResponseModels: PetResponseModel[] =  [];
+  public petResponseModelList: PetResponseModel[] =  [];
   public petRequestModel: PetRequestModel = new PetRequestModel();
   public petResponseModel: PetResponseModel = new PetResponseModel();
   public petUpdateRequestModel: PetUpdateRequestModel = new PetUpdateRequestModel();
@@ -23,13 +23,13 @@ export class PetService {
 
   getAllPets(){
     this.httpClient.get<PetResponseModel[]>(this.BASE_URL + `/get-all-pets`).subscribe((data) =>{
-      this.listOfPetResponseModels = data;
+      this.petResponseModelList = data;
     });
   }
 
   getPetsByUserId(userId: number){
     this.httpClient.get<PetResponseModel[]>(this.BASE_URL+`/get-pets-by-${userId}`).subscribe((data) =>{
-    this.listOfPetResponseModels = data;
+    this.petResponseModelList = data;
     })
   }
 
@@ -49,6 +49,10 @@ export class PetService {
 
   deletePet(pet:Pet){
     return this.httpClient.delete(this.BASE_URL+ `/delete-pet-by-${pet.id}`)
+  }
+
+  selectPet(petResponseModel: PetResponseModel){
+    this.petResponseModel = petResponseModel;
   }
 
 }

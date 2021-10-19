@@ -6,20 +6,20 @@
             </div>
             <div class="col-md-6">
                 <div class="description">
-                    <p><strong>Nome:</strong> {{this.petService.petResponseModel.name}}</p>
-                    <p><strong>Animal:</strong> {{this.petService.petResponseModel.specie}}</p>
-                    <p><strong>Raça:</strong> {{this.petService.petResponseModel.breed}}</p>
-                    <p><strong>Idade:</strong> {{this.petService.petResponseModel.ageYears}} anos e
-                        {{this.petService.petResponseModel.ageMonths}}
+                    <p><strong>Nome:</strong> {{this.pet.name}}</p>
+                    <p><strong>Animal:</strong> {{this.pet.specie}}</p>
+                    <p><strong>Raça:</strong> {{this.pet.breed}}</p>
+                    <p><strong>Idade:</strong> {{this.pet.ageYears}} anos e
+                        {{this.pet.ageMonths}}
                         meses
                     </p>
-                    <p><strong>Dono:</strong> {{this.petService.petResponseModel.userResponseModel.name}}</p>
-                    <p><strong>Endereço:</strong> {{this.petService.petResponseModel.userResponseModel.street}}, n° {{this.petService.petResponseModel.userResponseModel.houseNumber}} - {{this.petService.petResponseModel.userResponseModel.district}}</p>
-                    <p><strong>Descrição:</strong> {{this.petService.petResponseModel.description}}</p>
+                    <p><strong>Dono:</strong> {{this.pet.user.name}}</p>
+                    <p><strong>Endereço:</strong> {{this.pet.user.street}}, n° {{this.pet.user.houseNumber}} - {{this.pet.user.district}}</p>
+                    <div class="limit"><strong>Descrição:</strong> {{this.pet.description}}</div>
                     <div>
                         <div>
                             <div class="divAdotar">
-                                <a type="button" class="btn btn-primary" [routerLink]="['/adopt-page', this.pet.userId]">Adotar</a>
+                                <a type="button" class="btn btn-primary" [routerLink]="['/adopt-page']">Adotar</a>
                             </div>
                             <div class="divReportar">
                                 <a type="button" class="btn btn-danger"
